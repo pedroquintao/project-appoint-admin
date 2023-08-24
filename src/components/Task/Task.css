@@ -1,0 +1,4 @@
+.task-list__task {
+    display: flex;
+    border: 1px solid white;
+}
