@@ -1,5 +1,5 @@
 import React from 'react'
-import './Task.css'
+import './Task.module.scss'
 
 export default function Task({name, finalTime}) {
   return (

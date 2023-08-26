@@ -5,6 +5,7 @@ import AddButton from './components/AddButton'
 import SearchBar from './components/SearchBar'
 import TaskList from './components/TaskList'
 import TimerDisplay from './components/TimerDisplay'
+import Header from './components/Header'
 
 var TestTaskList = [
   {
@@ -26,18 +27,19 @@ function App() {
 
 
   return (
-    <>
-    <div>
-      <AddButton />
-      <SearchBar />
-      <TaskList taskList={tasks}/>
-    </div>
-    <div>
-      <TimerDisplay />
-    </div>
-      {/* <Header />
-      <Footer /> */}
-    </>
+    <section>
+      <Header />
+      <section>
+        <AddButton />
+        <SearchBar />
+        <TaskList taskList={tasks}/>
+      </section>
+      <section>
+        <TimerDisplay />
+      </section>
+        {/* <Header />
+        <Footer /> */}
+    </section>
   )
 }
 
