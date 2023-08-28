@@ -1,11 +1,12 @@
 import { useState } from 'react'
-import './App.css'
+import styles from './App.module.scss'
 import React from 'react'
 import AddButton from './components/AddButton'
 import SearchBar from './components/SearchBar'
 import TaskList from './components/TaskList'
 import TimerDisplay from './components/TimerDisplay'
 import Header from './components/Header'
+import Footer from './components/Footer'
 
 var TestTaskList = [
   {
@@ -27,19 +28,20 @@ function App() {
 
 
   return (
-    <section>
+    <div className={styles.page}>
       <Header />
-      <section>
-        <AddButton />
-        <SearchBar />
-        <TaskList taskList={tasks}/>
-      </section>
-      <section>
-        <TimerDisplay />
-      </section>
-        {/* <Header />
-        <Footer /> */}
-    </section>
+      <div className={styles.body}>
+        <section className={styles.tasks}>
+          <AddButton />
+          <SearchBar />
+          <TaskList taskList={tasks}/>
+        </section>
+        <section className={styles.display}>
+          <TimerDisplay />
+        </section>
+      </div>
+        <Footer />
+    </div>
   )
 }
 

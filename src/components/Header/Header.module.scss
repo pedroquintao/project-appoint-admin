@@ -1,5 +1,8 @@
 @import '../../styles/colors.scss';
 
-.cabecalho{
+.header{
+    display: flex;
+    width: auto;
     background-color: $primary-black;
+    color: $primary-white;
 }
