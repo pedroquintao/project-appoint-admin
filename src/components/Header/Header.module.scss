@@ -1,8 +1,7 @@
 @import '../../styles/colors.scss';
 
 .header{
-    display: flex;
-    width: auto;
+    padding: 32px;
     background-color: $primary-black;
     color: $primary-white;
 }

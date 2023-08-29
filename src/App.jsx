@@ -29,18 +29,26 @@ function App() {
 
   return (
     <div className={styles.page}>
-      <Header />
-      <div className={styles.body}>
-        <section className={styles.tasks}>
-          <AddButton />
-          <SearchBar />
-          <TaskList taskList={tasks}/>
+      <Header className={styles.cabecalho}/>
+
+        <section className={styles.body}>
+          <div className={styles.body__content}>
+            <div className={styles.tasks}>
+              <div className={styles.tasks__search}>
+                <AddButton />
+                <SearchBar />
+              </div>
+              <div className={styles.tasks__list}>
+                <TaskList taskList={tasks}/>
+              </div>
+            </div>
+            <div className={styles.timer}>
+              <TimerDisplay />
+            </div>
+          </div>
         </section>
-        <section className={styles.display}>
-          <TimerDisplay />
-        </section>
-      </div>
-        <Footer />
+
+        <Footer className={styles.rodape}/>
     </div>
   )
 }

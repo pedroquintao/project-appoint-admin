@@ -6,29 +6,46 @@
   padding: 0;
 }
 
+li {
+  list-style: none;
+}
+
 .page {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  text-align: center;
-  background-color: $primary-gray;
-  width: 100vw;
+  justify-content: space-around;
   height: 100vh;
 }
 
 .body{
+  flex-grow: 1;
   display: flex;
-  justify-content: space-evenly;
-  background-color: $primary-black;
+  justify-content: center;
+  background-color: $primary-gray;
   color: $primary-white;
-  margin: 0 30px;
-  padding: 200px 0;
+  
+  &__content {
+    display: flex;
+    background-color: brown;
+    margin: 100px 0;
+  }
+  
 }
 
 .tasks {
+  // margin-top: 20vh;
 
+  &__search {
+    padding-left: 50px;
+    background-color: yellow;
+  }
+
+  &__list {
+    margin: 50px 0;
+    background-color: blue;
+  }
 }
 
-.display{
-
+.timer{
+  background-color: green;
 }
