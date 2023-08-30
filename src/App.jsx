@@ -34,9 +34,13 @@ function App() {
         <Header />
       </div>
       <div className={styles.task}>
-        <AddButton />
-        <SearchBar />
-        <TaskList taskList={tasks}/>
+        <div className={styles.task__search}>
+          <AddButton />
+          <SearchBar />
+        </div>
+        <div className={styles.task__list}>
+          <TaskList taskList={tasks}/>
+        </div>
       </div>
       <div className={styles.timer}>
         <TimerDisplay />

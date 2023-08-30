@@ -11,13 +11,15 @@ li {
 }
 
 .page {
+  height: 100vh;
   display: grid;
   grid-gap: 1rem;
   grid-template-areas:"header header header" 
                       "main main aside"
                       "footer footer footer";
+
   grid-template-columns: auto auto auto;
-  grid-template-rows: auto 100vh auto;
+  grid-template-rows: auto 1fr auto;
 }
 
 .cabecalho {
@@ -28,11 +30,29 @@ li {
 .task {
   grid-area: main;
   background-color: blue;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+
+  &__search {
+    background-color: purple;
+    margin-top: 5rem;
+  }
+
+  &__list {
+    background-color: orangered;
+    margin-top: 2.5rem;
+  }
 }
 
 .timer {
   grid-area: aside;
   background-color: yellow;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .rodape{
