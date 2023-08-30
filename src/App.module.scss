@@ -1,4 +1,4 @@
-@import './styles/colors.scss';
+/* @import './styles/colors.scss'; */
 
 
 * {
@@ -11,41 +11,31 @@ li {
 }
 
 .page {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  height: 100vh;
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-areas:"header header header" 
+                      "main main aside"
+                      "footer footer footer";
+  grid-template-columns: auto auto auto;
+  grid-template-rows: auto 100vh auto;
 }
 
-.body{
-  flex-grow: 1;
-  display: flex;
-  justify-content: center;
-  background-color: $primary-gray;
-  color: $primary-white;
-  
-  &__content {
-    display: flex;
-    background-color: brown;
-    margin: 100px 0;
-  }
-  
+.cabecalho {
+  grid-area: header;
+  background-color: red;
 }
 
-.tasks {
-  // margin-top: 20vh;
-
-  &__search {
-    padding-left: 50px;
-    background-color: yellow;
-  }
-
-  &__list {
-    margin: 50px 0;
-    background-color: blue;
-  }
+.task {
+  grid-area: main;
+  background-color: blue;
 }
 
-.timer{
+.timer {
+  grid-area: aside;
+  background-color: yellow;
+}
+
+.rodape{
+  grid-area: footer;
   background-color: green;
 }
