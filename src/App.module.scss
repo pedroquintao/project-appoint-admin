@@ -1,4 +1,4 @@
-/* @import './styles/colors.scss'; */
+@import './styles/colors.scss';
 
 
 * {
@@ -13,27 +13,33 @@ li {
 .page {
   height: 100vh;
   display: grid;
-  grid-gap: 1rem;
   grid-template-areas:"header header header" 
                       "main main aside"
                       "footer footer footer";
 
   grid-template-columns: auto auto auto;
   grid-template-rows: auto 1fr auto;
+  background-color: $primary-gray;
 }
 
-.cabecalho {
+.header {
   grid-area: header;
-  background-color: red;
+  background-color: $primary-black;
+  color: $primary-white;
+  // background-color: red;
 }
 
 .task {
   grid-area: main;
-  background-color: blue;
+  background-color: $secundary-gray;
+  // background-color: blue;
+
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  margin: 2rem 1rem 2rem 2rem;
+  border-radius: 16px;
 
   &__search {
     background-color: purple;
@@ -41,21 +47,31 @@ li {
   }
 
   &__list {
-    background-color: orangered;
+    // background-color: orangered;
     margin-top: 2.5rem;
+    width: 66%;
+    height: 50%;
   }
 }
 
 .timer {
   grid-area: aside;
-  background-color: yellow;
+  background-color: $secundary-gray;
+  // background-color: yellow;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  margin: 2rem 2rem 2rem 1rem;
+  border-radius: 16px;
+  &__display {
+    margin-top: 2.5rem;
+  }
 }
 
-.rodape{
+.footer{
   grid-area: footer;
-  background-color: green;
+  background-color: $primary-black;
+  color: $primary-white;
+  // background-color: green;
 }

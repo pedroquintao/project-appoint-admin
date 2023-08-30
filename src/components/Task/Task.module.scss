@@ -1,4 +1,11 @@
-.task-list__task {
+@import '../../styles/colors.scss';
+
+.taskbar {
     display: flex;
+    justify-content: space-around;
     border: 1px solid white;
+    border-radius: 8px;
+    height: 36px;
+    color: $primary-white;
+    display: flex;
 }

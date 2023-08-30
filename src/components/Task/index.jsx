@@ -1,9 +1,10 @@
 import React from 'react'
-import './Task.module.scss'
+import styles from './Task.module.scss'
+
 
 export default function Task({name, finalTime}) {
   return (
-    <li className='task-list__task'>
+    <li className={styles.taskbar}>
         <p>{name}</p>
         <p>{finalTime}</p>
     </li>

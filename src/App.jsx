@@ -21,6 +21,15 @@ var TestTaskList = [
   name: 'Nome 3',
   finalTime: 'Tempo Final 3'
   }
+  ,
+  {
+  name: 'Nome 4',
+  finalTime: 'Tempo Final 4'
+  },
+  {
+  name: 'Nome 5',
+  finalTime: 'Tempo Final 5'
+  }
 ]
 
 function App() {
@@ -30,24 +39,26 @@ function App() {
   return (
 
     <div className={styles.page}>
-      <div className={styles.cabecalho}>
+      <section className={styles.header}>
         <Header />
-      </div>
-      <div className={styles.task}>
-        <div className={styles.task__search}>
-          <AddButton />
-          <SearchBar />
-        </div>
-        <div className={styles.task__list}>
-          <TaskList taskList={tasks}/>
-        </div>
-      </div>
-      <div className={styles.timer}>
-        <TimerDisplay />
-      </div>
-      <div className={styles.rodape}>
+      </section>
+        <section className={styles.task}>
+          <div className={styles.task__search}>
+            <AddButton />
+            <SearchBar />
+          </div>
+          <div className={styles.task__list}>
+            <TaskList taskList={tasks}/>
+          </div>
+        </section>
+        <section className={styles.timer}>
+          <div className={styles.timer__display}>
+            <TimerDisplay />
+          </div>
+        </section>
+      <section className={styles.footer}>
         <Footer />
-      </div>
+      </section>
     </div>
   )
 }
