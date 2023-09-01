@@ -36,13 +36,16 @@ li {
 
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   margin: 2rem 1rem 2rem 2rem;
   border-radius: 16px;
 
   &__search {
-    background-color: purple;
+    // background-color: purple;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     margin-top: 5rem;
   }
 

@@ -1,0 +1,13 @@
+@import '../../styles/colors.scss';
+
+.searchbar {
+    border-style: none;
+    border-radius: 8px;
+    width: 256px;
+    height: 36px;
+    margin-left: 32px;
+    background-color: $secundary-black;
+    color: $terciary-gray;
+    padding: 0 16px;
+    font-size: 1rem;
+}

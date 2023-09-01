@@ -20,8 +20,7 @@ var TestTaskList = [
   {
   name: 'Nome 3',
   finalTime: 'Tempo Final 3'
-  }
-  ,
+  },
   {
   name: 'Nome 4',
   finalTime: 'Tempo Final 4'
@@ -42,20 +41,20 @@ function App() {
       <section className={styles.header}>
         <Header />
       </section>
-        <section className={styles.task}>
-          <div className={styles.task__search}>
-            <AddButton />
-            <SearchBar />
-          </div>
-          <div className={styles.task__list}>
-            <TaskList taskList={tasks}/>
-          </div>
-        </section>
-        <section className={styles.timer}>
-          <div className={styles.timer__display}>
-            <TimerDisplay />
-          </div>
-        </section>
+      <section className={styles.task}>
+        <div className={styles.task__search}>
+          <AddButton />
+          <SearchBar />
+        </div>
+        <div className={styles.task__list}>
+          <TaskList taskList={tasks}/>
+        </div>
+      </section>
+      <section className={styles.timer}>
+        <div className={styles.timer__display}>
+          <TimerDisplay />
+        </div>
+      </section>
       <section className={styles.footer}>
         <Footer />
       </section>

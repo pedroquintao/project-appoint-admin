@@ -2,10 +2,16 @@
 
 .taskbar {
     display: flex;
-    justify-content: space-around;
-    border: 1px solid white;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    border: 1px solid $primary-gray;
     border-radius: 8px;
     height: 36px;
-    color: $primary-white;
-    display: flex;
+    background-color: $secundary-black;
+    color: $terciary-gray;
+    
+    &__name{
+        font-weight: 700;
+    }
 }

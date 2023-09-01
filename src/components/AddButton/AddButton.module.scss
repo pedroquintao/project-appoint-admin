@@ -1,0 +1,14 @@
+@import '../../styles/colors.scss';
+
+.addButton {
+    border-style: none;
+    border-radius: 8px;
+    background-color: $secundary-black;
+    color: $terciary-gray;
+    font-size: 2em;
+    width: 56px;
+    height: 56px;
+    display: block;
+    justify-content: center;
+    align-items: center;
+}
