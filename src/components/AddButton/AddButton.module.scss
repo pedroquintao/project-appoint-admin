@@ -3,12 +3,15 @@
 .addButton {
     border-style: none;
     border-radius: 8px;
-    background-color: $secundary-black;
-    color: $terciary-gray;
+    background-color: $primary-black;
+    color: $secundary-white;
     font-size: 2em;
     width: 56px;
     height: 56px;
     display: block;
     justify-content: center;
     align-items: center;
+    &:hover {
+        background-color: black;
+    }
 }
