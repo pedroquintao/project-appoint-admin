@@ -16,16 +16,19 @@ export default function TaskOptions() {
     const toggleVisibility = () => {setVisibility(!visibility);}
 
     return (
-        <>
-            <GoKebabHorizontal  className={styles.task_options}
+        <div className={styles.task_options}>
+            <GoKebabHorizontal  
                                 onClick={toggleVisibility}/>
             {visibility && 
                 (<div className={styles.task_options__menu}>
-                    <AiFillEdit className={styles.menu__editBtn}/>
-                    <RiDeleteBin6Line className={styles.menu__deleteBtn}/>
+                    <AiFillEdit className={styles.menu__editBtn}
+                                size={24}/>
+                    <RiDeleteBin6Line   className={styles.menu__deleteBtn}
+                                        size={24}
+                                        />
                 </div>
                 )
             }
-        </>
+        </div>
     )
 }

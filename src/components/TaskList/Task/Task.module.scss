@@ -7,11 +7,12 @@
     gap: 20px;
     padding: 0 10px;
     border: 1px solid $primary-gray;
+    background-color: $secundary-black;
     border-radius: 8px;
     height: 36px;
-    background-color: $secundary-black;
     // background-color: pink;
     color: $secundary-white;
+    cursor: pointer;
     
     &__taskInfo {
         display: flex;
@@ -21,7 +22,7 @@
 
         &__name{
             font-weight: 700;
-            background-color: yellow;
+            // background-color: yellow;
         }
     }
 
