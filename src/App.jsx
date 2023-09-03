@@ -1,12 +1,12 @@
 import { useState } from 'react'
 import styles from './App.module.scss'
 import React from 'react'
-import AddButton from './components/AddButton'
 import SearchBar from './components/SearchBar'
 import TaskList from './components/TaskList'
 import TimerDisplay from './components/TimerDisplay'
 import Header from './components/Header'
 import Footer from './components/Footer'
+import {AiOutlinePlus} from 'react-icons/ai'
 
 var TestTaskList = [
   {
@@ -43,7 +43,8 @@ function App() {
       </section>
       <section className={styles.task}>
         <div className={styles.task__search}>
-          <AddButton />
+          {/* <AddButton /> */}
+          <AiOutlinePlus className={styles.task__addBtn} size={32}/>
           <SearchBar />
         </div>
         <div className={styles.task__list}>

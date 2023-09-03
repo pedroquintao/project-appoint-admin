@@ -4,15 +4,25 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 20px;
+    gap: 20px;
+    padding: 0 10px;
     border: 1px solid $primary-gray;
     border-radius: 8px;
     height: 36px;
     background-color: $secundary-black;
+    // background-color: pink;
     color: $secundary-white;
     
-    &__name{
-        font-weight: 700;
+    &__taskInfo {
+        display: flex;
+        flex-grow: 1;
+        justify-content: space-between;
+        // background-color: red;
+
+        &__name{
+            font-weight: 700;
+            background-color: yellow;
+        }
     }
 
     &:hover {

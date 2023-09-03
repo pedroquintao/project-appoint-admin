@@ -1,0 +1,18 @@
+@import '../../../../styles/colors.scss';
+
+.task_options{
+    // position: relative;
+    background-color: blue;
+    width: 32px;
+    height: 80%;
+    border-radius: 8px;
+
+    &__menu {
+        background-color: red;
+        // z-index: 2;
+        // display: block;
+        position: absolute;
+        // left: 0;
+        transform: translate(100px);
+    }
+}
