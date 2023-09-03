@@ -6,8 +6,12 @@
     width: 256px;
     height: 36px;
     margin-left: 32px;
-    background-color: $secundary-black;
+    background-color: $primary-gray;
     color: $secundary-white;
     padding: 0 16px;
     font-size: 1rem;
+
+    &:hover {
+        background-color: $secundary-black;
+    }
 }

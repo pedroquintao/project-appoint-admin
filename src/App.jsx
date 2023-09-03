@@ -4,9 +4,11 @@ import React from 'react'
 import SearchBar from './components/SearchBar'
 import TaskList from './components/TaskList'
 import TimerDisplay from './components/TimerDisplay'
+import TimerLog from './components/TimerLog'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import {AiOutlinePlus} from 'react-icons/ai'
+import {BsStopwatch} from 'react-icons/bs'
 
 var TestTaskList = [
   {
@@ -42,8 +44,8 @@ function App() {
         <Header />
       </section>
       <section className={styles.task}>
+        <BsStopwatch className={styles.task__chronometer} size={256}/>
         <div className={styles.task__search}>
-          {/* <AddButton /> */}
           <AiOutlinePlus className={styles.task__addBtn} size={32}/>
           <SearchBar />
         </div>
@@ -54,6 +56,9 @@ function App() {
       <section className={styles.timer}>
         <div className={styles.timer__display}>
           <TimerDisplay />
+        </div>
+        <div className={styles.timer__log}>
+          <TimerLog />
         </div>
       </section>
       <section className={styles.footer}>

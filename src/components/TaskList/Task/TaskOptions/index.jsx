@@ -17,16 +17,17 @@ export default function TaskOptions() {
 
     return (
         <div className={styles.task_options}>
-            <GoKebabHorizontal  
-                                onClick={toggleVisibility}/>
-            {visibility && 
-                (<div className={styles.task_options__menu}>
-                    <AiFillEdit className={styles.menu__editBtn}
-                                size={24}/>
-                    <RiDeleteBin6Line   className={styles.menu__deleteBtn}
-                                        size={24}
-                                        />
+            <GoKebabHorizontal onClick={toggleVisibility}/>
+
+            {visibility && (
+            <div className={styles.task_options__menu}>
+                <div className={styles.task_options__menu__editBtn} >
+                    <AiFillEdit size={24} />
                 </div>
+                <div className={styles.task_options__menu__deleteBtn} >
+                    <RiDeleteBin6Line size={24} />
+                </div>
+            </div>
                 )
             }
         </div>

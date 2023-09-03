@@ -10,6 +10,8 @@
     background-color: $secundary-black;
     border-radius: 8px;
     height: 36px;
+    width: 512px;
+    min-height: 40px;
     // background-color: pink;
     color: $secundary-white;
     cursor: pointer;
@@ -20,7 +22,7 @@
         justify-content: space-between;
         // background-color: red;
 
-        &__name{
+        &__name {
             font-weight: 700;
             // background-color: yellow;
         }
