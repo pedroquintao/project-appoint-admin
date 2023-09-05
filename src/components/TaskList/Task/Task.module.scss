@@ -4,16 +4,13 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 20px;
-    padding: 0 10px;
-    border: 1px solid $primary-gray;
-    background-color: $secundary-black;
-    border-radius: 8px;
-    height: 36px;
-    width: 512px;
-    min-height: 40px;
-    // background-color: pink;
-    color: $secundary-white;
+    padding: 2.5px 10px;
+    border: 1px solid $gray-1;
+    background-color: $black-2;
+    border-radius: 16px;
+    height: 5vh;
+    width: 33vw;
+    color: $white-2;
     cursor: pointer;
     
     &__taskInfo {
@@ -24,11 +21,16 @@
 
         &__name {
             font-weight: 700;
+            padding-left: 10px;
             // background-color: yellow;
+        }
+
+        &__finalTime {
+            padding-right: 10px;
         }
     }
 
     &:hover {
-        background-color: $secundary-gray;
+        background-color: black;
     } 
 }

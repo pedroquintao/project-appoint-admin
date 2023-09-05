@@ -2,16 +2,16 @@
 
 .searchbar {
     border-style: none;
-    border-radius: 8px;
-    width: 256px;
-    height: 36px;
+    border-radius: 16px;
+    // width: 256px;
+    height: 5vh;
     margin-left: 32px;
-    background-color: $primary-gray;
-    color: $secundary-white;
+    background-color: $gray-1;
+    color: $white-1;
     padding: 0 16px;
     font-size: 1rem;
 
     &:hover {
-        background-color: $secundary-black;
+        background-color: $gray-3;
     }
 }

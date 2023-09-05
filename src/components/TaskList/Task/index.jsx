@@ -7,7 +7,7 @@ export default function Task({name, finalTime}) {
     <li className={styles.taskbar}>
       <div className={styles.taskbar__taskInfo}>
         <p className={styles.taskbar__taskInfo__name}>{name}</p>
-        <p>{finalTime}</p>
+        <p className={styles.taskbar__taskInfo__finalTime}>{finalTime}</p>
       </div>
       <TaskOptions />
     </li>

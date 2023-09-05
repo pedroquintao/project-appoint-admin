@@ -10,14 +10,14 @@
     border-radius: 8px;
 
     &:hover {
-        background-color: $primary-gray;
+        background-color: $gray-1;
     }
 
     &__menu {
         display: flex;
         border-radius: 8px;
-        border: 1px solid $primary-gray;
-        background-color: $secundary-black;
+        border: 1px solid $gray-1;
+        background-color: $black-2;
         padding: 10px;
         gap: 10px;
         position: absolute;
@@ -36,7 +36,7 @@
 
 
             &:hover {
-                background-color: $primary-gray;
+                background-color: $gray-1;
             }
         }
     }

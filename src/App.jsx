@@ -13,23 +13,23 @@ import {BsStopwatch} from 'react-icons/bs'
 var TestTaskList = [
   {
   name: 'Nome 1',
-  finalTime: 'Tempo Final 1'
+  finalTime: '00:00'
   },
   {
   name: 'Nome 2',
-  finalTime: 'Tempo Final 2'
+  finalTime: '00:00'
   },
   {
   name: 'Nome 3',
-  finalTime: 'Tempo Final 3'
+  finalTime: '00:00'
   },
   {
   name: 'Nome 4',
-  finalTime: 'Tempo Final 4'
+  finalTime: '00:00'
   },
   {
   name: 'Nome 5',
-  finalTime: 'Tempo Final 5'
+  finalTime: '00:00'
   }
 ]
 
@@ -43,27 +43,29 @@ function App() {
       <section className={styles.header}>
         <Header />
       </section>
-      <section className={styles.task}>
-        <BsStopwatch className={styles.task__chronometer} size={256}/>
-        <div className={styles.task__search}>
-          <AiOutlinePlus className={styles.task__addBtn} size={32}/>
-          <SearchBar />
-        </div>
-        <div className={styles.task__list}>
-          <TaskList taskList={tasks}/>
-        </div>
-      </section>
-      <section className={styles.timer}>
-        <div className={styles.timer__display}>
-          <TimerDisplay />
-        </div>
-        <div className={styles.timer__log}>
-          <TimerLog />
-        </div>
-      </section>
-      <section className={styles.footer}>
-        <Footer />
-      </section>
+      <div className={styles.content}>
+        <section className={styles.content__task}>
+          <BsStopwatch className={styles.content__task__chronometer} size={128}/>
+          <div className={styles.content__task__search}>
+            <AiOutlinePlus className={styles.content__task__add_btn} size={32}/>
+            <SearchBar />
+          </div>
+          <div className={styles.content__task__list}>
+            <TaskList taskList={tasks}/>
+          </div>
+        </section>
+        <section className={styles.content__timer}>
+          <div className={styles.content__timer__display}>
+            <TimerDisplay />
+          </div>
+          <div className={styles.content__timer__log}>
+            <TimerLog />
+          </div>
+        </section>
+      </div>
+        <section className={styles.footer}>
+          <Footer />
+        </section>
     </div>
   )
 }
