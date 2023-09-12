@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import styles from './App.module.scss'
 import React from 'react'
 import SearchBar from './components/SearchBar'
@@ -34,8 +34,30 @@ var TestTaskList = [
 ]
 
 function App() {
+  
   const [tasks, setTask] = useState(TestTaskList)
 
+  useEffect(() => {
+    // Função para fazer a requisição GET e obter a lista de pessoas
+    async function fetchTask() {
+      try {
+        const response = await fetch('http://localhost:8080/appoint');
+        
+        if (!response.ok) {
+          throw new Error('Erro ao buscar task');
+        }
+
+        const data = await response.json();
+        console.log('%cApp.jsx line:51 data', 'color: #007acc;', data);
+        setTask(data);
+      } catch (error) {
+        console.error('Erro:', error);
+      }
+    }
+
+    // Chama a função de busca quando o componente é montado
+    fetchTask();
+  }, [])
 
   return (
 
