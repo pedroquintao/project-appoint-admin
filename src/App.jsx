@@ -35,11 +35,11 @@ var TestTaskList = [
 
 function App() {
   
-  const [tasks, setTask] = useState(TestTaskList)
+  const [tasks, setTasks] = useState(TestTaskList)
 
   useEffect(() => {
     // Função para fazer a requisição GET e obter a lista de pessoas
-    async function fetchTask() {
+    async function fetchTasks() {
       try {
         const response = await fetch('http://localhost:8080/appoint');
         
@@ -48,17 +48,17 @@ function App() {
         }
 
         const data = await response.json();
-        console.log('%cApp.jsx line:51 data', 'color: #007acc;', data);
-        setTask(data);
+        // console.log('%cApp.jsx line:51 data', 'color: #007acc;', data);
+        setTasks(data);
+
       } catch (error) {
         console.error('Erro:', error);
       }
     }
-
-    // Chama a função de busca quando o componente é montado
-    fetchTask();
+    console.log('%cApp.jsx line:58 REDNDERIZOU', 'color: #007acc;', 'RENDERIZOU');
+    fetchTasks();
   }, [])
-
+  
   return (
 
     <div className={styles.page}>
