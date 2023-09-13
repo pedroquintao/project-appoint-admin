@@ -3,10 +3,11 @@
  
  export default function NewTaskModal() {
    return (
-     <div className={styles.container}>
+     <form className={styles.container}>
         <input type="text" placeholder='nome'/>
         <input type="text" placeholder='00:00'/>
-     </div>
+        <button className={styles.create_button} type='submit'>Create</button>
+     </form>
    )
  }
  
