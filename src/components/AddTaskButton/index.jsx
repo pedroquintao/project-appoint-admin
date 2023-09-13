@@ -14,9 +14,8 @@ export default function AddTaskButton() {
 
   return (
     <>
-    <div className={styles.add_btn} onClick={toggleVisibility}>
-
-      <AiOutlinePlus  size={32} />
+    <div className={styles.add_btn} >
+      <AiOutlinePlus  onClick={toggleVisibility} size={32} />
       {visibility && (<NewTaskModal className={styles.add_btn__modal}/>)}
     </div>
     </>
