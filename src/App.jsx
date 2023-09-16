@@ -2,12 +2,12 @@ import { useState, useEffect } from 'react'
 import styles from './App.module.scss'
 import React from 'react'
 import SearchBar from './components/SearchBar'
+import AddTaskButton from './components/AddTaskButton'
 import TaskList from './components/TaskList'
 import TimerDisplay from './components/TimerDisplay'
 import TimerLog from './components/TimerLog'
 import Header from './components/Header'
 import Footer from './components/Footer'
-import {AiOutlinePlus} from 'react-icons/ai'
 import {BsStopwatch} from 'react-icons/bs'
 
 var TestTaskList = [
@@ -39,7 +39,7 @@ function App() {
 
   useEffect(() => {
     // Função para fazer a requisição GET e obter a lista de pessoas
-    async function fetchTask() {
+    async function getTaskList() {
       try {
         const response = await fetch('http://localhost:8080/appoint');
         
@@ -50,14 +50,13 @@ function App() {
         const data = await response.json();
         console.log('%cApp.jsx line:51 data', 'color: #007acc;', data);
         setTask(data);
+
       } catch (error) {
         console.error('Erro:', error);
       }
     }
-
-    // Chama a função de busca quando o componente é montado
-    fetchTask();
-  }, [])
+    getTaskList();
+  }, []);
 
   return (
 
@@ -69,7 +68,7 @@ function App() {
         <section className={styles.content__task}>
           <BsStopwatch className={styles.content__task__chronometer} size={128}/>
           <div className={styles.content__task__search}>
-            <AiOutlinePlus className={styles.content__task__add_btn} size={32}/>
+            <AddTaskButton />
             <SearchBar />
           </div>
           <div className={styles.content__task__list}>

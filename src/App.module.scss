@@ -44,17 +44,6 @@ li {
       justify-content: center;
       align-items: center;
     }
-
-      &__add_btn {
-        background-color: $black-1;
-        color: $white-2;
-        padding: 0.5em;
-        border-radius: 16px;
-
-        &:hover {
-          background-color: black;
-        }
-      }
   }
 
   &__timer {
