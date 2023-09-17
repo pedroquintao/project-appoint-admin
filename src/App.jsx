@@ -35,15 +35,11 @@ var TestTaskList = [
 
 function App() {
   
-  const [tasks, setTasks] = useState(TestTaskList)
+  const [tasks, setTask] = useState(TestTaskList)
 
   useEffect(() => {
     // Função para fazer a requisição GET e obter a lista de pessoas
-<<<<<<< HEAD
-    async function fetchTasks() {
-=======
     async function getTaskList() {
->>>>>>> 0936d1c222243e8c545c32fd83b1f0bbe77e518f
       try {
         const response = await fetch('http://localhost:8080/appoint');
         
@@ -52,30 +48,19 @@ function App() {
         }
 
         const data = await response.json();
-<<<<<<< HEAD
-        // console.log('%cApp.jsx line:51 data', 'color: #007acc;', data);
-        setTasks(data);
-=======
-        console.log('%cApp.jsx line:51 data', 'color: #007acc;', data);
-        const newTask = data.map( element => element = {name: element.user, finalTime: element.timestamp})
-        console.log('%cApp.jsx line:53 newTask', 'color: #007acc;', newTask);
+        const newTask = data.map( element => element = {name: element.user, 
+                                                        finalTime: element.timestamp})
         setTask(newTask);
->>>>>>> 0936d1c222243e8c545c32fd83b1f0bbe77e518f
 
       } catch (error) {
         console.error('Erro:', error);
       }
     }
-<<<<<<< HEAD
-    console.log('%cApp.jsx line:58 REDNDERIZOU', 'color: #007acc;', 'RENDERIZOU');
-    fetchTasks();
-  }, [])
-  
-=======
+
     getTaskList();
+    
   }, []);
 
->>>>>>> 0936d1c222243e8c545c32fd83b1f0bbe77e518f
   return (
 
     <div className={styles.page}>
