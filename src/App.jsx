@@ -49,7 +49,9 @@ function App() {
 
         const data = await response.json();
         console.log('%cApp.jsx line:51 data', 'color: #007acc;', data);
-        setTask(data);
+        const newTask = data.map( element => element = {name: element.user, finalTime: element.timestamp})
+        console.log('%cApp.jsx line:53 newTask', 'color: #007acc;', newTask);
+        setTask(newTask);
 
       } catch (error) {
         console.error('Erro:', error);

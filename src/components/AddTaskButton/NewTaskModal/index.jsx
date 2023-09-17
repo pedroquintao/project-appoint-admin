@@ -6,7 +6,7 @@
      <form className={styles.container}>
         <input type="text" placeholder='nome'/>
         <input type="text" placeholder='00:00'/>
-        <button className={styles.create_button} type='submit'>Create</button>
+        <button className={styles.create_button} onClick={console.log('SUBMIT!')}>Create</button>
      </form>
    )
  }
