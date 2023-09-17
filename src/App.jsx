@@ -2,12 +2,12 @@ import { useState, useEffect } from 'react'
 import styles from './App.module.scss'
 import React from 'react'
 import SearchBar from './components/SearchBar'
+import AddTaskButton from './components/AddTaskButton'
 import TaskList from './components/TaskList'
 import TimerDisplay from './components/TimerDisplay'
 import TimerLog from './components/TimerLog'
 import Header from './components/Header'
 import Footer from './components/Footer'
-import {AiOutlinePlus} from 'react-icons/ai'
 import {BsStopwatch} from 'react-icons/bs'
 
 var TestTaskList = [
@@ -39,7 +39,11 @@ function App() {
 
   useEffect(() => {
     // Função para fazer a requisição GET e obter a lista de pessoas
+<<<<<<< HEAD
     async function fetchTasks() {
+=======
+    async function getTaskList() {
+>>>>>>> 0936d1c222243e8c545c32fd83b1f0bbe77e518f
       try {
         const response = await fetch('http://localhost:8080/appoint');
         
@@ -48,17 +52,30 @@ function App() {
         }
 
         const data = await response.json();
+<<<<<<< HEAD
         // console.log('%cApp.jsx line:51 data', 'color: #007acc;', data);
         setTasks(data);
+=======
+        console.log('%cApp.jsx line:51 data', 'color: #007acc;', data);
+        const newTask = data.map( element => element = {name: element.user, finalTime: element.timestamp})
+        console.log('%cApp.jsx line:53 newTask', 'color: #007acc;', newTask);
+        setTask(newTask);
+>>>>>>> 0936d1c222243e8c545c32fd83b1f0bbe77e518f
 
       } catch (error) {
         console.error('Erro:', error);
       }
     }
+<<<<<<< HEAD
     console.log('%cApp.jsx line:58 REDNDERIZOU', 'color: #007acc;', 'RENDERIZOU');
     fetchTasks();
   }, [])
   
+=======
+    getTaskList();
+  }, []);
+
+>>>>>>> 0936d1c222243e8c545c32fd83b1f0bbe77e518f
   return (
 
     <div className={styles.page}>
@@ -69,7 +86,7 @@ function App() {
         <section className={styles.content__task}>
           <BsStopwatch className={styles.content__task__chronometer} size={128}/>
           <div className={styles.content__task__search}>
-            <AiOutlinePlus className={styles.content__task__add_btn} size={32}/>
+            <AddTaskButton />
             <SearchBar />
           </div>
           <div className={styles.content__task__list}>

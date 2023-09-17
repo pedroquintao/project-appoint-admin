@@ -1,0 +1,20 @@
+@import '../../styles/colors.scss';
+
+.add_btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    &__plus{
+      width: 32px;
+      height: 32px;
+      background-color: $black-1;
+      color: $white-2;
+      padding: 0.5em;
+      border-radius: 16px;
+    }
+    &__plus:hover {
+      background-color: $black-0;
+    }
+  }
