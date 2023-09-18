@@ -1,0 +1,15 @@
+@import '../../styles/colors.scss';
+
+.timer_control {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+    background-color: red;
+    padding: 0.5em 1em;
+    
+    &__btn {
+        border-style: none;
+        padding: 0.5em;
+
+    }
+}
