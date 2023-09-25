@@ -2,7 +2,8 @@
  import styles from './NewTaskModal.module.scss'
  import { useState, useEffect } from 'react'
  
- export default function NewTaskModal() {
+ export default function NewTaskModal({visibility}) {
+  
   const emptyFormData = {
     name: '',
     finalTime: ''
@@ -22,7 +23,7 @@
     const postFormData = {
       // user: formData.name,
       // timestamp: formData.finalTime
-      id: 5,
+      // id: 5,
       user: 'Esse aqui deu bão',
       timestamp: "2023-08-20T12:15:12",
       type: "END",
@@ -30,6 +31,7 @@
       createdAt: "2023-09-17T13:08:14.636360425",
       lastModified: "2023-09-17T13:08:14.636354434"
     }
+
     console.log(postFormData)
     const requestOptions = {
       method: 'POST',
@@ -40,24 +42,27 @@
     const response = await fetch('http://localhost:8080/appoint', requestOptions);
 
     if (!response.ok) {
-      throw new Error('Erro ao cadastrar aluno');
+      throw new Error('Erro ao cadastrar a nova atividade');
     }
 
     const data = await response.json();
-    console.log('Aluno cadastrado com sucesso:', data);
-
+    console.log('Nova atividade cadastrada com sucesso:', data);
     setFormData(emptyFormData);
 
   }
-
-  //escrever o metodo POST
+  console.log('%cindex.jsx line:50 visibility', 'color: #007acc;', visibility);
 
    return (
-     <form onSubmit={createNewTask} className={styles.container}>
-        <input onChange={changeName} name='name' type="text" placeholder='nome'/>
-        <input onChange={changeName} type="text" name='finalTime' placeholder='00:00'/>
-        <button className={styles.create_button} >Create</button>
-     </form>
-   )
- }
+    <>
+      {visibility && (
+          <form onSubmit={createNewTask} className={styles.container}>
+            <input onChange={changeName} name='name' type="text" placeholder='nome'/>
+            <input onChange={changeName} type="text" name='finalTime' placeholder='00:00'/>
+            <button className={styles.create_button} >Create</button>
+          </form>
+        )
+      }
+    </>
+  )
+}
  

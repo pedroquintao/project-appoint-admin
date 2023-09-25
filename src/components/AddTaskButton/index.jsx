@@ -10,13 +10,13 @@ export default function AddTaskButton() {
 
   const [visibility, setVisibility] = useState(initialVisibility)
 
-  const toggleVisibility = () => {setVisibility(!visibility);}
+  const toggleVisibility = () => { setVisibility(!visibility); }
 
   return (
     <>
     <div className={styles.add_btn} >
       <AiOutlinePlus className={styles.add_btn__plus} onClick={toggleVisibility} size={32} />
-      {visibility && (<NewTaskModal />)}
+      {visibility && <NewTaskModal visibility={visibility}/>}
     </div>
     </>
   )
