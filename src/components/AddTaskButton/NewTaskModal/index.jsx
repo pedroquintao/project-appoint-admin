@@ -7,6 +7,7 @@
     name: '',
     finalTime: ''
   }
+
   const [formData, setFormData] = useState(emptyFormData);
 
   const changeName = (e) => {
@@ -20,16 +21,17 @@
     e.preventDefault();
     
     const postFormData = {
-      // user: formData.name,
-      // timestamp: formData.finalTime
-      id: 5,
-      user: 'Esse aqui deu bão',
-      timestamp: "2023-08-20T12:15:12",
-      type: "END",
-      taskId: 0,
-      createdAt: "2023-09-17T13:08:14.636360425",
-      lastModified: "2023-09-17T13:08:14.636354434"
+      user: formData.name,
+      timestamp: formData.finalTime
+      // id: 5,
+      // user: 'Esse aqui funcionou',
+      // timestamp: "2023-08-20T12:15:12",
+      // type: "END",
+      // taskId: 0,
+      // createdAt: "2023-09-17T13:08:14.636360425",
+      // lastModified: "2023-09-17T13:08:14.636354434"
     }
+
     console.log(postFormData)
     const requestOptions = {
       method: 'POST',
@@ -49,8 +51,6 @@
     setFormData(emptyFormData);
 
   }
-
-  //escrever o metodo POST
 
    return (
      <form onSubmit={createNewTask} className={styles.container}>
