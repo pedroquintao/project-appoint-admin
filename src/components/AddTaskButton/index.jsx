@@ -10,7 +10,11 @@ export default function AddTaskButton() {
 
   const [visibility, setVisibility] = useState(initialVisibility)
 
-  const toggleVisibility = () => {setVisibility(!visibility);}
+  const toggleVisibility = () => {
+    console.log('%cindex.jsx line:14 Antes', 'color: #007acc;', visibility);
+    setVisibility(!visibility);
+    console.log('%cindex.jsx line:16 Depois', 'color: #007acc;', visibility);
+  }
 
   return (
     <>
