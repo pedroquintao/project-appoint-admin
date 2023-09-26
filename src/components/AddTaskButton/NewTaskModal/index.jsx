@@ -40,13 +40,14 @@
       // private LocalDateTime lastModified;
     }
 
-    console.log(postFormData)
+    console.log('%cindex.jsx line:44 postFormData:', 'color: #26bfa5;', postFormData);
+    
     const requestOptions = {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(postFormData),
     };
-    
+
     try {
 
       const response = await fetch('http://localhost:8080/appoint', requestOptions);
