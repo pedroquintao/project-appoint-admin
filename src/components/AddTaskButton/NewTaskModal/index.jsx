@@ -24,12 +24,20 @@
       // user: formData.name,
       // timestamp: formData.finalTime
       // id: 5,
-      user: 'Esse aqui deu bão',
+      user: formData.name,
       timestamp: "2023-08-20T12:15:12",
       type: "END",
       taskId: 0,
       createdAt: "2023-09-17T13:08:14.636360425",
       lastModified: "2023-09-17T13:08:14.636354434"
+      
+      // private Integer id;
+      // private String user;
+      // private LocalDateTime timestamp;
+      // private AppointType type;
+      // private Integer taskId;
+      // private LocalDateTime createdAt;
+      // private LocalDateTime lastModified;
     }
 
     console.log(postFormData)
@@ -48,9 +56,7 @@
     const data = await response.json();
     console.log('Nova atividade cadastrada com sucesso:', data);
     setFormData(emptyFormData);
-
   }
-  console.log('%cindex.jsx line:50 visibility', 'color: #007acc;', visibility);
 
    return (
     <>

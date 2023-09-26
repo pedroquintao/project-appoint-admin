@@ -8,7 +8,7 @@ import TimerDisplay from './components/TimerDisplay'
 import TimerLog from './components/TimerLog'
 import Header from './components/Header'
 import Footer from './components/Footer'
-import {BsStopwatch} from 'react-icons/bs'
+import { BsStopwatch } from 'react-icons/bs'
 
 var TestTaskList = [
   {
@@ -35,11 +35,12 @@ var TestTaskList = [
 
 function App() {
   
-  const [tasks, setTask] = useState(TestTaskList)
+  const [tasks, setTasks] = useState(TestTaskList)
 
   useEffect(() => {
-    // Função para fazer a requisição GET e obter a lista de pessoas
-    async function getTaskList() {
+
+    const getTaskList = async () => {
+
       try {
         const response = await fetch('http://localhost:8080/appoint');
         
@@ -48,11 +49,16 @@ function App() {
         }
 
         const data = await response.json();
-        const newTask = data.map( element => element = {name: element.user, 
-                                                        finalTime: element.timestamp})
-        setTask(newTask);
+        const newTasks = data.map( element => element = {
+                                                        name: element.user, 
+                                                        finalTime: element.timestamp
+                                                        }
+                                                        )
+        setTasks(newTasks);
 
-      } catch (error) {
+      } 
+      
+      catch (error) {
         console.error('Erro:', error);
       }
     }
