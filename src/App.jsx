@@ -5,6 +5,7 @@ import SearchBar from './components/SearchBar'
 import AddTaskButton from './components/AddTaskButton'
 import TaskList from './components/TaskList'
 import TimerDisplay from './components/TimerDisplay'
+import TimerControl from './components/TimerControl'
 import TimerLog from './components/TimerLog'
 import Header from './components/Header'
 import Footer from './components/Footer'
@@ -84,6 +85,9 @@ function App() {
         <section className={styles.content__timer}>
           <div className={styles.content__timer__display}>
             <TimerDisplay />
+          </div>
+          <div className={styles.content__timer__control}>
+            <TimerControl />
           </div>
           <div className={styles.content__timer__log}>
             <TimerLog />
