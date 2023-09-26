@@ -10,7 +10,7 @@ export default function AddTaskButton() {
 
   const [visibility, setVisibility] = useState(initialVisibility)
 
-  const toggleVisibility = () => { setVisibility(!visibility); }
+  const toggleVisibility = () => {setVisibility(!visibility);}
 
   return (
     <>

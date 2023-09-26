@@ -8,6 +8,7 @@
     name: '',
     finalTime: ''
   }
+
   const [formData, setFormData] = useState(emptyFormData);
 
   const changeName = (e) => {
@@ -21,6 +22,7 @@
     e.preventDefault();
     
     const postFormData = {
+<<<<<<< HEAD
       // user: formData.name,
       // timestamp: formData.finalTime
       // id: 5,
@@ -38,6 +40,17 @@
       // private Integer taskId;
       // private LocalDateTime createdAt;
       // private LocalDateTime lastModified;
+=======
+      user: formData.name,
+      timestamp: formData.finalTime
+      // id: 5,
+      // user: 'Esse aqui funcionou',
+      // timestamp: "2023-08-20T12:15:12",
+      // type: "END",
+      // taskId: 0,
+      // createdAt: "2023-09-17T13:08:14.636360425",
+      // lastModified: "2023-09-17T13:08:14.636354434"
+>>>>>>> 8a783a1d48c5a62d170062050e82d200bc7ca092
     }
 
     console.log(postFormData)
