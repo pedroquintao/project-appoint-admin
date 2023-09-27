@@ -37,29 +37,29 @@ var TestTaskList = [
 function App() {
   
   const [tasks, setTasks] = useState(TestTaskList)
+  
+  const getTaskList = async () => {
+
+    try {
+      const response = await fetch('http://localhost:8080/appoint');
+      
+      if (!response.ok) {
+        throw new Error('Erro ao buscar task');
+      }
+
+      const data = await response.json();
+      const newTasks = data.map( element => element = {name: element.user, 
+                                                      finalTime: element.timestamp})
+      setTasks(newTasks);
+
+    } 
+    
+    catch (error) {
+      console.error('Erro:', error);
+    }
+  }
 
   useEffect(() => {
-
-    const getTaskList = async () => {
-
-      try {
-        const response = await fetch('http://localhost:8080/appoint');
-        
-        if (!response.ok) {
-          throw new Error('Erro ao buscar task');
-        }
-
-        const data = await response.json();
-        const newTasks = data.map( element => element = {name: element.user, 
-                                                        finalTime: element.timestamp})
-        setTasks(newTasks);
-
-      } 
-      
-      catch (error) {
-        console.error('Erro:', error);
-      }
-    }
 
     getTaskList();
     
@@ -75,7 +75,7 @@ function App() {
         <section className={styles.content__task}>
           <BsStopwatch className={styles.content__task__chronometer} size={128}/>
           <div className={styles.content__task__search}>
-            <AddTaskButton />
+            <AddTaskButton getTaskList={getTaskList}/>
             <SearchBar />
           </div>
           <div className={styles.content__task__list}>

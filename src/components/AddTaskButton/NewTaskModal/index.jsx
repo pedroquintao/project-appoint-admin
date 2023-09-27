@@ -2,7 +2,7 @@
  import styles from './NewTaskModal.module.scss'
  import { useState, useEffect } from 'react'
  
- export default function NewTaskModal({visibility}) {
+ export default function NewTaskModal({visibility, setVisibility, getTaskList}) {
   
   const emptyFormData = {
     name: '',
@@ -63,6 +63,12 @@
 
     catch(error) {
       console.error('Erro:', error);
+    }
+
+    finally {
+      setVisibility(false);
+      getTaskList();
+
     }
   }
 

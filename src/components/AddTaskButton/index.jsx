@@ -4,7 +4,7 @@ import styles from './AddTaskButton.module.scss'
 import NewTaskModal from './NewTaskModal';
 
 
-export default function AddTaskButton() {
+export default function AddTaskButton({getTaskList}) {
 
   let initialVisibility = false;
 
@@ -16,7 +16,7 @@ export default function AddTaskButton() {
     <>
     <div className={styles.add_btn} >
       <AiOutlinePlus className={styles.add_btn__plus} onClick={toggleVisibility} size={32} />
-      {visibility && <NewTaskModal visibility={visibility} />}
+      {visibility && <NewTaskModal visibility={visibility} setVisibility={setVisibility} getTaskList={getTaskList}/>}
     </div>
     </>
   )
