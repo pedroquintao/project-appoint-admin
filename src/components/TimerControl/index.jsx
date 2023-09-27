@@ -11,8 +11,8 @@ export default function TimerControl() {
   
   return (
     <div className={styles.timer_control}>
-        {isPlaying? <PiPlayFill className={styles.timer_control__btn} onClick={togglePlaySytate} /> :
-                    <PiPauseFill className={styles.timer_control__btn} onClick={togglePlaySytate} />}
+        {!isPlaying? <PiPlayFill className={styles.timer_control__btn} onClick={togglePlaySytate} /> :
+                     <PiPauseFill className={styles.timer_control__btn} onClick={togglePlaySytate} />}
         <PiStopFill className={styles.timer_control__btn} />
     </div>
   )

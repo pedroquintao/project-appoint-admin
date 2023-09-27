@@ -5,6 +5,6 @@ export default function SearchBar() {
   return (
     <input  className={styles.searchbar}
             type="text"
-            placeholder='Teste' />
+            placeholder='Filter' />
   )
 }
