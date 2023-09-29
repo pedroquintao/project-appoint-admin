@@ -13,24 +13,12 @@ import { BsStopwatch } from 'react-icons/bs'
 
 var TestTaskList = [
   {
-  name: 'Nome 1',
-  finalTime: '00:00'
-  },
-  {
-  name: 'Nome 2',
-  finalTime: '00:00'
-  },
-  {
-  name: 'Nome 3',
-  finalTime: '00:00'
-  },
-  {
-  name: 'Nome 4',
-  finalTime: '00:00'
-  },
-  {
-  name: 'Nome 5',
-  finalTime: '00:00'
+  name: '',
+  plannedTime: {
+              hours: 0,
+              minutes: 0,
+              seconds: 0
+            }
   }
 ]
 
@@ -41,18 +29,20 @@ function App() {
   const getTaskList = async () => {
 
     try {
-      const response = await fetch('http://localhost:8080/appoint');
+      const response = await fetch('http://localhost:8080/task');
       
       if (!response.ok) {
         throw new Error('Erro ao buscar task');
       }
 
       const data = await response.json();
-      const newTasks = data.map( element => element = {
-                                                      id: element.id,
-                                                      name: element.user, 
-                                                      finalTime: element.timestamp})
-      setTasks(newTasks);
+      console.log('data: ', data)
+      // const newTasks = data.map( element => element = {
+      //                                                 id: element.id,
+      //                                                 name: element.name, 
+      //                                                 plannedTime: element.plannedTime})
+              
+      setTasks(data);
     } 
     
     catch (error) {
