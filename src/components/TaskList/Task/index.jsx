@@ -3,7 +3,6 @@ import styles from './Task.module.scss'
 import TaskOptions from './TaskOptions'
 
 export default function Task({__id, name, plannedTime}) {
-  console.log('finalTime: ', plannedTime);
 
   let hours = '', minutes = '', seconds = '';
   

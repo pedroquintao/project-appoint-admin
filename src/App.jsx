@@ -36,12 +36,7 @@ function App() {
       }
 
       const data = await response.json();
-      console.log('data: ', data)
-      // const newTasks = data.map( element => element = {
-      //                                                 id: element.id,
-      //                                                 name: element.name, 
-      //                                                 plannedTime: element.plannedTime})
-              
+ 
       setTasks(data);
     } 
     
