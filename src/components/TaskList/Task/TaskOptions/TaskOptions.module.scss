@@ -23,8 +23,7 @@
         position: absolute;
         transform: translateX(80%);
 
-        &__deleteBtn,
-        &__editBtn {
+        &__deleteBtn {
             display: flex;
             justify-content: center;
             flex-direction: column;

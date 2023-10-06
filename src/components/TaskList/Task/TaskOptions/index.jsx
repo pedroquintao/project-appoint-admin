@@ -1,8 +1,8 @@
 import React from 'react'
 import styles from './TaskOptions.module.scss'
+import EditButton from './EditButton';
 import { useState } from "react";
 import {GoKebabHorizontal} from 'react-icons/go'
-import {AiFillEdit} from 'react-icons/ai'
 import {RiDeleteBin6Line} from 'react-icons/ri'
 
 export default function TaskOptions({__id}) {
@@ -31,15 +31,16 @@ export default function TaskOptions({__id}) {
         }
     }
 
+    
+
     return (
         <div className={styles.task_options}>
             <GoKebabHorizontal onClick={toggleVisibility}/>
 
             {visibility && (
             <div className={styles.task_options__menu}>
-                <div className={styles.task_options__menu__editBtn} >
-                    <AiFillEdit size={24} />
-                </div>
+                <EditButton />
+                
                 <div className={styles.task_options__menu__deleteBtn} >
                     <RiDeleteBin6Line onClick={deleteTask} size={24} />
                 </div>
