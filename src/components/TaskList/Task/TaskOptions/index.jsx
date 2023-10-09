@@ -7,7 +7,7 @@ import {GoKebabHorizontal} from 'react-icons/go'
 import {RiDeleteBin6Line} from 'react-icons/ri'
 
 export default function TaskOptions({__id}) {
-    
+    const btnSize = 24;
     const [visibility, setVisibility] = useState(false)
 
     const toggleVisibility = () => {setVisibility(!visibility);}
@@ -39,30 +39,22 @@ export default function TaskOptions({__id}) {
 
     return (
         <div className={styles.task_options}>
-            <GoKebabHorizontal onClick={toggleVisibility}/>
+            <GoKebabHorizontal className={styles.task_options__kebabMenu} size={btnSize} onClick={toggleVisibility}/>
 
             {visibility && (
                 <div> 
                     {!isEditModeOn? (
                         <div className={styles.task_options__menu}>
-                            <AiFillEdit className={styles.task_options__menu__editBtn} size={24} onClick={toggleEditMode} />
-                            <RiDeleteBin6Line className={styles.task_options__menu__deleteBtn} size={24} onClick={toggleEditMode} />
+                            <AiFillEdit className={styles.task_options__menu__editBtn} size={btnSize} onClick={toggleEditMode} />
+                            <RiDeleteBin6Line className={styles.task_options__menu__deleteBtn} size={btnSize} onClick={toggleEditMode} />
                         </div>
                     ) : (
                         <div className={styles.task_options__menu}>
-                            <AiOutlineCheck size={24} onClick={toggleEditMode}/>
-                            <AiOutlineClose size={24} onClick={toggleEditMode}/>
+                            <AiOutlineCheck className={styles.task_options__menu__checkBtn} size={btnSize} onClick={toggleEditMode}/>
+                            <AiOutlineClose className={styles.task_options__menu__checkBtn} size={btnSize} onClick={toggleEditMode}/>
                         </div>
                         )}
                 </div>
-                // <div className={styles.task_options__menu}>
-                //     <EditButton isEditModeOn={ isEditModeOn } toggleEditMode={toggleEditMode}/>
-                    
-                //     {!isEditModeOn && <div className={styles.task_options__menu__deleteBtn} >
-                //         <RiDeleteBin6Line //onClick={ deleteTask } 
-                //         size={24} />
-                //     </div>}
-                // </div>
                 )
             }
         </div>

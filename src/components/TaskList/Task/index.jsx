@@ -16,7 +16,7 @@ export default function Task({__id, name, plannedTime}) {
         <p className={styles.taskbar__taskInfo__name}>{name}</p>
         <p className={styles.taskbar__taskInfo__finalTime}>{hours} : {minutes} : {seconds}</p>
       </div>
-      <TaskOptions __id={__id}/>
+      <TaskOptions className={styles.taskbar__taskInfo__kebabMenu} __id={__id}/>
     </li>
   )
 }
