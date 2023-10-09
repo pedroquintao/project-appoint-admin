@@ -1,22 +1,43 @@
 import React from 'react'
 import styles from './Task.module.scss'
 import TaskOptions from './TaskOptions'
+import { useState } from 'react';
+import TaskTextContent from './TaskTextContent';
+import TaskInputContent from './TaskInputContent';
 
 export default function Task({__id, name, plannedTime}) {
 
-  let hours = '', minutes = '', seconds = '';
+  let normalizeTimeInput = (time) => {
+    let hours = '', minutes = '', seconds = '';
   
-  plannedTime.hours < 10? hours = `0${plannedTime.hours}` : hours = `${plannedTime.hours}`;
-  plannedTime.minutes < 10? minutes = `0${plannedTime.minutes}` : minutes = `${plannedTime.minutes}`;
-  plannedTime.seconds < 10? seconds = `0${plannedTime.seconds}` : seconds = `${plannedTime.seconds}`
+    time.hours < 10? hours = `0${time.hours}` : hours = `${time.hours}`;
+    time.minutes < 10? minutes = `0${time.minutes}` : minutes = `${time.minutes}`;
+    time.seconds < 10? seconds = `0${time.seconds}` : seconds = `${time.seconds}`
+
+    return ({
+            hours: hours, 
+            minutes: minutes, 
+            seconds: seconds
+            })
+  }
+  let time = normalizeTimeInput(plannedTime)
+  
+  const [isEditModeOn, setIsClicked] = useState(false);
+
+    const toggleEditMode = () => {setIsClicked(!isEditModeOn);}
 
   return (
-    <li className={styles.taskbar}>
-      <div className={styles.taskbar__taskInfo}>
-        <p className={styles.taskbar__taskInfo__name}>{name}</p>
-        <p className={styles.taskbar__taskInfo__finalTime}>{hours} : {minutes} : {seconds}</p>
-      </div>
-      <TaskOptions className={styles.taskbar__taskInfo__kebabMenu} __id={__id}/>
-    </li>
+    <>
+        <li className={styles.taskbar}>
+          <div className={styles.taskbar__taskInfo}>
+          {!isEditModeOn? (
+              <TaskTextContent name={name} time={time}/>
+            ):(
+              <TaskInputContent name={name} time={time}/> 
+            )}
+          </div>
+          <TaskOptions __id={__id} toggleEditMode={toggleEditMode} isEditModeOn={isEditModeOn}/>
+        </li>
+    </>
   )
 }

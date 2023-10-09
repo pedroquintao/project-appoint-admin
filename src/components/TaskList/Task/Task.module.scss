@@ -4,7 +4,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 2.5px 10px;
+    padding: 0.25em 0.5em;
     border: 1px solid $gray-1;
     background-color: $black-2;
     border-radius: 16px;
@@ -16,21 +16,41 @@
     &__taskInfo {
         display: flex;
         flex-grow: 1;
+        gap: 1em;
         justify-content: space-between;
         // background-color: red;
-
-        &__name {
+        
+        &__infoName {
             font-weight: 700;
-            padding-left: 10px;
+            padding-left: 1em;
             // background-color: yellow;
         }
-
-        &__finalTime {
+        
+        &__infoFinalTime {
+            display: flex;
+            flex-wrap: nowrap;
             padding-right: 1em;
         }
-
-        &__kebabMenu {
-            background-color: red;
+        &__entradas {
+            display: flex;
+            justify-content: space-between;
+            // flex-wrap: nowrap;
+            max-width: 100%;
+            // flex-shrink: 1;
+            input {
+                max-width: 33%;
+                border-style: none;
+                border-radius: 16px;
+                background-color: $gray-1;
+                color: $white-1;
+                // font-weight: 700;
+                font-size: 1rem;
+                padding-left: 1em;
+            
+                &:hover {
+                    background-color: $gray-3;
+                }
+            }
         }
     }
 

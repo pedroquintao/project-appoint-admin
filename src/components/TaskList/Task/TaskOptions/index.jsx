@@ -6,7 +6,7 @@ import {AiFillEdit, AiOutlineCheck, AiOutlineClose } from 'react-icons/ai'
 import {GoKebabHorizontal} from 'react-icons/go'
 import {RiDeleteBin6Line} from 'react-icons/ri'
 
-export default function TaskOptions({__id}) {
+export default function TaskOptions({toggleEditMode, isEditModeOn}) {
     const btnSize = 24;
     const [visibility, setVisibility] = useState(false)
 
@@ -33,10 +33,7 @@ export default function TaskOptions({__id}) {
     //     }
     // }
 
-    const [isEditModeOn, setIsClicked] = useState(false);
-
-    const toggleEditMode = () => {console.log('%cindex.jsx line:37 isEditModeOn', 'color: #007acc;', isEditModeOn);setIsClicked(!isEditModeOn);}
-
+    
     return (
         <div className={styles.task_options}>
             <GoKebabHorizontal className={styles.task_options__kebabMenu} size={btnSize} onClick={toggleVisibility}/>
