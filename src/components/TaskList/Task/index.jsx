@@ -28,16 +28,12 @@ export default function Task({__id, name, plannedTime}) {
 
   return (
     <>
-        <li className={styles.taskbar}>
-          <div className={styles.taskbar__taskInfo}>
-          {!isEditModeOn? (
-              <TaskTextContent name={name} time={time}/>
-            ):(
-              <TaskInputContent name={name} time={time}/> 
-            )}
-          </div>
+      <li className={styles.taskbar}>
+        {!isEditModeOn? 
+          <TaskTextContent name={name} time={time}/> : 
+          <TaskInputContent name={name} time={time}/> }
           <TaskOptions __id={__id} toggleEditMode={toggleEditMode} isEditModeOn={isEditModeOn}/>
-        </li>
+      </li>
     </>
   )
 }

@@ -3,13 +3,13 @@ import styles from './TaskTextContent.module.scss'
 
 export default function TaskTextContent({name, time}) {
   return (
-    <div>
-        <p className={styles.taskbar__taskInfo__infoName}>{name}</p>
-            <p className={styles.taskbar__taskInfo__infoFinalTime}>
-                <p>{time.hours}</p> :
-                <p>{time.minutes}</p> : 
-                <p>{time.seconds}</p>
-        </p>
+    <div className={styles.textContent}>
+        <p className={styles.textContent__name}>{name}</p>
+        <div className={styles.textContent__time}>
+            {time.hours} :
+            {time.minutes} : 
+            {time.seconds}
+        </div>
     </div>
   )
 }
