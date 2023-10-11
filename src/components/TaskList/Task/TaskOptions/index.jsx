@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './TaskOptions.module.scss'
-// import EditButton from './EditButton';
+import EditConfirmationModal from './EditConfirmationModal'
 import { useState } from "react";
 import {AiFillEdit, AiOutlineCheck, AiOutlineClose } from 'react-icons/ai'
 import {GoKebabHorizontal} from 'react-icons/go'
@@ -8,9 +8,15 @@ import {RiDeleteBin6Line} from 'react-icons/ri'
 
 export default function TaskOptions({toggleEditMode, isEditModeOn}) {
     const btnSize = 24;
-    const [visibility, setVisibility] = useState(false)
+    const [menuVisibility, setMenuVisibility] = useState(false);
+    const [editConfirmationModalVisibility, setEditConfirmationModalVisibility] = useState(false);
 
-    const toggleVisibility = () => {setVisibility(!visibility);}
+    const toggleMenuVisibility = () => {setMenuVisibility(!menuVisibility);}
+    const toggleEditConfirmationModalVisibility = () => {setEditConfirmationModalVisibility(!editConfirmationModalVisibility)}
+
+    const teste = () => {
+        console.log('Opa! Fui clicado!');
+    }
 
 //! A função delete task deve pertencer a um futuro componente que represente o botão de deletar task
     // const deleteTask = async() => {
@@ -36,9 +42,9 @@ export default function TaskOptions({toggleEditMode, isEditModeOn}) {
     
     return (
         <div className={styles.task_options}>
-            <GoKebabHorizontal className={styles.task_options__kebabMenu} size={btnSize} onClick={toggleVisibility}/>
+            <GoKebabHorizontal className={styles.task_options__kebabMenu} size={btnSize} onClick={toggleMenuVisibility}/>
 
-            {visibility && (
+            {menuVisibility && (
                 <div> 
                     {!isEditModeOn? (
                         <div className={styles.task_options__menu}>
@@ -47,8 +53,13 @@ export default function TaskOptions({toggleEditMode, isEditModeOn}) {
                         </div>
                     ) : (
                         <div className={styles.task_options__menu}>
-                            <AiOutlineCheck className={styles.task_options__menu__checkBtn} size={btnSize} onClick={toggleEditMode}/>
+                            <AiOutlineCheck className={styles.task_options__menu__checkBtn} size={btnSize} onClick={toggleEditConfirmationModalVisibility}/>
                             <AiOutlineClose className={styles.task_options__menu__checkBtn} size={btnSize} onClick={toggleEditMode}/>
+                            {editConfirmationModalVisibility && (<div className={styles.task_options__menu__teste}>
+                                                                    <EditConfirmationModal />
+                                                                </div>)}
+
+
                         </div>
                         )}
                 </div>

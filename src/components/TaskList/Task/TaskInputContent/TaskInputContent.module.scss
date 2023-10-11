@@ -23,16 +23,13 @@
     }
 
     &__time {
-        display: flex;
         text-align: center;
+        background-color: $gray-1;
         border-style: none;
         border-radius: 16px;
-        background-color: $gray-1;
         color: $white-1;
         font-size: 1rem;
         width: 33%;
-        flex-wrap: nowrap;
-
     
         &:hover {
             background-color: $gray-3;
