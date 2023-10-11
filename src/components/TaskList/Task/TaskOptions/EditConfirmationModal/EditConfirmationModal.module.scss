@@ -1,3 +1,10 @@
-.content{
+.content {
+    width: 33vw;
+    height: 33vh;
+    position: fixed;
+    background-color: red;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 
 }

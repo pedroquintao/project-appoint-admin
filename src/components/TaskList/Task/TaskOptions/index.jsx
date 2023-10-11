@@ -48,20 +48,20 @@ export default function TaskOptions({toggleEditMode, isEditModeOn}) {
                 <div> 
                     {!isEditModeOn? (
                         <div className={styles.task_options__menu}>
-                            <AiFillEdit className={styles.task_options__menu__editBtn} size={btnSize} onClick={toggleEditMode} />
-                            <RiDeleteBin6Line className={styles.task_options__menu__deleteBtn} size={btnSize} onClick={toggleEditMode} />
+                            <AiFillEdit className={styles.task_options__menu__Btn} size={btnSize} onClick={toggleEditMode} />
+                            <RiDeleteBin6Line className={styles.task_options__menu__Btn} size={btnSize} onClick={toggleEditMode} />
                         </div>
                     ) : (
                         <div className={styles.task_options__menu}>
-                            <AiOutlineCheck className={styles.task_options__menu__checkBtn} size={btnSize} onClick={toggleEditConfirmationModalVisibility}/>
-                            <AiOutlineClose className={styles.task_options__menu__checkBtn} size={btnSize} onClick={toggleEditMode}/>
-                            {editConfirmationModalVisibility && (<div className={styles.task_options__menu__teste}>
-                                                                    <EditConfirmationModal />
-                                                                </div>)}
+                            <AiOutlineCheck className={styles.task_options__menu__Btn} size={btnSize} onClick={toggleEditConfirmationModalVisibility}/>
+                            <AiOutlineClose className={styles.task_options__menu__Btn} size={btnSize} onClick={toggleEditMode}/>
 
 
                         </div>
                         )}
+                    {editConfirmationModalVisibility && (<div className={styles.task_options__menu__teste}>
+                                                            <EditConfirmationModal />
+                                                        </div>)}
                 </div>
                 )
             }
