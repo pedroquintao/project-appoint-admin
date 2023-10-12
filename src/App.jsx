@@ -11,6 +11,29 @@ import Header from './components/Header'
 import Footer from './components/Footer'
 import { BsStopwatch } from 'react-icons/bs'
 
+//*todo: Ao clicar no botão de editar:
+//*:     |
+//*:     `-> 1 - Os textos simples, "nome" e "tempo", presentes na barra da task são substituídos
+//*:         |  por inputs, sendo que "nome" se torna input do tipo "text" e "tempo", input dodo
+//*:        |   tipo "time". 
+//*:       |
+//*:   `-> 1.1 - Estilizar os inputs 
+
+
+//*          2 - O botão de edit se transforma em um sinal de "tick" (sinal de certo). Esse novo
+//*         |   sinal, a ser clicado, tem o comportamento de:  
+//*todo:   | 
+//*todo:   `-> 2.1 - Surge um modal que pergunta ao usuário se ele tem certeza que quer fazer a 
+//*todo:            edição da task. Esse modal tem dois botões: "sim" e "não".
+
+//*todo:        2.2 - Se o sim é clicado no modal, será enviada uma requisição do tipo PATH para a 
+//*todo:            editar a task. Se o não é que for clicado, o modal será fechado.
+
+//*todo:        2.3 - O botão tick volta a ser o botão de edit
+
+//*todo:        2.4 - Os inputs de text e time voltam a ser textos simples na barra da task
+
+
 var TestTaskList = [
   {
   name: '',

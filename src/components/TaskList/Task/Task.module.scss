@@ -4,33 +4,19 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 2.5px 10px;
-    border: 1px solid $gray-1;
-    background-color: $black-2;
-    border-radius: 16px;
     height: 5vh;
     width: 33vw;
+    border: 1px solid $gray-1;
+    border-radius: 16px;
+    background-color: $black-2;
     color: $white-2;
     cursor: pointer;
-    
-    &__taskInfo {
-        display: flex;
-        flex-grow: 1;
-        justify-content: space-between;
-        // background-color: red;
-
-        &__name {
-            font-weight: 700;
-            padding-left: 10px;
-            // background-color: yellow;
-        }
-
-        &__finalTime {
-            padding-right: 10px;
-        }
-    }
 
     &:hover {
         background-color: black;
     } 
+
+    &__text {
+        display: flex;
+    }
 }

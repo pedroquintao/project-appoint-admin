@@ -66,10 +66,6 @@
     finally {
       setVisibility(false);
       getTaskList();
-      getTaskList();
-
-      getTaskList(); 
-
     }
   }
 
