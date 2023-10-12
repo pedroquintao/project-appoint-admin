@@ -12,7 +12,7 @@ export default function TaskOptions({toggleEditMode, isEditModeOn}) {
     const [editConfirmationModalVisibility, setEditConfirmationModalVisibility] = useState(false);
 
     const toggleMenuVisibility = () => {setMenuVisibility(!menuVisibility);}
-    const toggleEditConfirmationModalVisibility = () => {setEditConfirmationModalVisibility(!editConfirmationModalVisibility)}
+    const toggleEditConfirmationModalVisibility = () => {setEditConfirmationModalVisibility(!editConfirmationModalVisibility); console.log('Ḿodal Visibility is:', editConfirmationModalVisibility)}
 
     const teste = () => {
         console.log('Opa! Fui clicado!');
@@ -56,12 +56,12 @@ export default function TaskOptions({toggleEditMode, isEditModeOn}) {
                             <AiOutlineCheck className={styles.task_options__menu__Btn} size={btnSize} onClick={toggleEditConfirmationModalVisibility}/>
                             <AiOutlineClose className={styles.task_options__menu__Btn} size={btnSize} onClick={toggleEditMode}/>
 
-
                         </div>
                         )}
-                    {editConfirmationModalVisibility && (<div className={styles.task_options__menu__teste}>
-                                                            <EditConfirmationModal />
-                                                        </div>)}
+                        {editConfirmationModalVisibility && (
+                        <div className={styles.task_options__menu__teste}>
+                            <EditConfirmationModal toggleModalVisibility={toggleEditConfirmationModalVisibility}/>
+                        </div>)}
                 </div>
                 )
             }
