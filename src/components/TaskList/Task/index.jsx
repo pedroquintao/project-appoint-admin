@@ -5,7 +5,10 @@ import { useState } from 'react';
 import TaskTextContent from './TaskTextContent';
 import TaskInputContent from './TaskInputContent';
 
-export default function Task({__id, name, plannedTime}) {
+export default function Task({task}) {
+
+  const name = task.name,
+        plannedTime = task.plannedTime;
 
   let normalizeTimeInput = (time) => {
     let hours = '', minutes = '', seconds = '';
@@ -20,19 +23,28 @@ export default function Task({__id, name, plannedTime}) {
             seconds: seconds
             })
   }
-  let time = normalizeTimeInput(plannedTime)
+
+  const time = normalizeTimeInput(plannedTime)
+  
+  const [inputName, setInputName] = useState(name)
+
+  const [inputTime, setInputTime] = useState(time)
   
   const [isEditModeOn, setIsClicked] = useState(false);
 
-    const toggleEditMode = () => {setIsClicked(!isEditModeOn);}
+  const toggleEditMode = () => {setIsClicked(!isEditModeOn);}
+
+  const changeInputName = (e) => {setInputName(e.target.value); console.log('inputName: ', inputName)}
+
+  const changeInputTime = (e) => {setInputTime(e.target.value); console.log('inputTime: ', inputTime);}
 
   return (
     <>
       <li className={styles.taskbar}>
         {!isEditModeOn? 
           <TaskTextContent name={name} time={time}/> : 
-          <TaskInputContent name={name} time={time}/> }
-          <TaskOptions __id={__id} toggleEditMode={toggleEditMode} isEditModeOn={isEditModeOn}/>
+          <TaskInputContent inputName={inputName} inputTime={inputTime} changeInputName={changeInputName} changeInputTime={changeInputTime}/> }
+          <TaskOptions task={task} toggleEditMode={toggleEditMode} isEditModeOn={isEditModeOn}/>
       </li>
     </>
   )

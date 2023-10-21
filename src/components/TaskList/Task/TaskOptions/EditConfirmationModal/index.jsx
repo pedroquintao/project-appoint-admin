@@ -1,15 +1,20 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styles from './EditConfirmationModal.module.scss'
 
-export default function EditConfirmationModal({toggleModalVisibility}) {
+export default function EditConfirmationModal({task, toggleModalVisibility}) {
+
 
   const editTask = async (e) => {
-    window.alert('Fazer aqui o método para enviar a requisicao para editar a tarefa!')
+    
+    // const standardInput = {
+      
+    // }
+    console.log('task: ', task);
   }
 
   return (
     <div className={styles.content}>
-      <h1>Are you sure you want to edit the data for this task?</h1>
+      <h1>Are you sure you want to edit this task data?</h1>
       <div className={styles.content__buttons}>
         <button className={styles.content__buttons__cancel} onClick={toggleModalVisibility} >Cancel</button>
         <button className={styles.content__buttons__edit} onClick={editTask} >Edit</button>

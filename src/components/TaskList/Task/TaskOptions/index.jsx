@@ -2,16 +2,19 @@ import React from 'react'
 import styles from './TaskOptions.module.scss'
 import EditConfirmationModal from './EditConfirmationModal'
 import { useState } from "react";
-import {AiFillEdit, AiOutlineCheck, AiOutlineClose } from 'react-icons/ai'
-import {GoKebabHorizontal} from 'react-icons/go'
-import {RiDeleteBin6Line} from 'react-icons/ri'
+import { AiFillEdit, AiOutlineCheck, AiOutlineClose } from 'react-icons/ai'
+import { GoKebabHorizontal } from 'react-icons/go'
+import { RiDeleteBin6Line } from 'react-icons/ri'
 
-export default function TaskOptions({toggleEditMode, isEditModeOn}) {
+export default function TaskOptions({task, toggleEditMode, isEditModeOn}) {
     const btnSize = 24;
+
     const [menuVisibility, setMenuVisibility] = useState(false);
+
     const [editConfirmationModalVisibility, setEditConfirmationModalVisibility] = useState(false);
 
     const toggleMenuVisibility = () => {setMenuVisibility(!menuVisibility);}
+
     const toggleEditConfirmationModalVisibility = () => {setEditConfirmationModalVisibility(!editConfirmationModalVisibility); console.log('Ḿodal Visibility is:', editConfirmationModalVisibility)}
 
     const teste = () => {
@@ -55,13 +58,15 @@ export default function TaskOptions({toggleEditMode, isEditModeOn}) {
                         <div className={styles.task_options__menu}>
                             <AiOutlineCheck className={styles.task_options__menu__Btn} size={btnSize} onClick={toggleEditConfirmationModalVisibility}/>
                             <AiOutlineClose className={styles.task_options__menu__Btn} size={btnSize} onClick={toggleEditMode}/>
-
                         </div>
                         )}
-                        {editConfirmationModalVisibility && (
+
+                    {editConfirmationModalVisibility && (
                         <div className={styles.task_options__menu__teste}>
-                            <EditConfirmationModal toggleModalVisibility={toggleEditConfirmationModalVisibility}/>
-                        </div>)}
+                            <EditConfirmationModal  task={task} toggleModalVisibility={toggleEditConfirmationModalVisibility}/>
+                        </div>
+                        )}
+
                 </div>
                 )
             }

@@ -22,9 +22,9 @@ import { BsStopwatch } from 'react-icons/bs'
 
 //*          2 - O botão de edit se transforma em um sinal de "tick" (sinal de certo). Esse novo
 //*         |   sinal, a ser clicado, tem o comportamento de:  
-//*todo:   | 
-//*todo:   `-> 2.1 - Surge um modal que pergunta ao usuário se ele tem certeza que quer fazer a 
-//*todo:            edição da task. Esse modal tem dois botões: "sim" e "não".
+//*        | 
+//*        `-> 2.1 - Surge um modal que pergunta ao usuário se ele tem certeza que quer fazer a 
+//*                 edição da task. Esse modal tem dois botões: "sim" e "não".
 
 //*todo:        2.2 - Se o sim é clicado no modal, será enviada uma requisição do tipo PATH para a 
 //*todo:            editar a task. Se o não é que for clicado, o modal será fechado.

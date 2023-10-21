@@ -7,7 +7,7 @@ export default function TaskList({taskList}) {
   
   return (
     <ul className={styles.listarea}>
-        {taskList.map(task => <Task __id={task.id} name={task.name} plannedTime={task.plannedTime}/>)}
+        {taskList.map(task => <Task task={task} />)}
     </ul>
   )
 }
