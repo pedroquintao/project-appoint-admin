@@ -1,0 +1,10 @@
+@import '../../../../styles/misc';
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5em 1em;
+    border-radius: $border-radius;
+    background-color: orangered;
+    
+}

@@ -1,0 +1,14 @@
+@import '../../../styles/colors';
+@import '../../../styles/misc';
+
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: red;
+    margin-top: 5%;
+    padding: 1em 2em;
+    font-size: 2em;
+    width: 90%;
+    max-width: 250px;
+}
