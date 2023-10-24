@@ -15,6 +15,9 @@
 
     &__addAndSearch {
         display: flex;
+        justify-content: flex-start;
         gap: 1em;
+        width: 90%;
+        max-width: 250px;
     }
 }

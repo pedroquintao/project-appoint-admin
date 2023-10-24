@@ -34,6 +34,7 @@ export default function TaskList() {
   const getTaskList = () => {
     axios.get('http://localhost:8080/task')
     .then(response => {
+      setTaskList(response.data)
       console.log('Recived data: ', response.data)
     })
     .catch((error) => {
@@ -49,7 +50,7 @@ export default function TaskList() {
   }
 
 
-  useEffect(() => { getTaskList; }, []);
+  useEffect(() => { getTaskList(); }, []);
 
   return (
     <div className={styles.content}>
