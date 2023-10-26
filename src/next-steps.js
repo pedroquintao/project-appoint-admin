@@ -2,6 +2,7 @@
 //*      1.1 - Criar o componente do modal, que tem dois inputs: um para nome e outro para tempo planejado. Além disso, também exisstem dois botões: um para enviar o formulário e outro cancelar
 //*      1.2 - Criar lógica que faz com que o modal apareça e desapareça ao clicar no botão de adicionar task
 //*      1.3 - Criar lógica para fazer uma requisição do tipo POST quando enviar o formulário do modal de adicionar nova task
+
 //todo 2 - Criar o botao de opcoes dentro de cada task
 //todo      2.1 - Quando esse botao e clicado, abre-se um modal com as opcoes de editar e apagar a task (talvez colocar a opcao de ler o log tambem)
 //todo      2.2 - Ao clicar na opcao de editar, os textos de nome e planned time da task selecionada se tornam iputs text e time respectivamente. Ao mesmo tempo, os botoes do modal tornam-se um sinal de tick e um X.

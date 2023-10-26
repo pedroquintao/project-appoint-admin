@@ -1,5 +1,6 @@
- import React from 'react'
+import React from 'react'
 import styles from './Task.module.scss'
+import ButtonTaskMenu from './ButtonTaskMenu'
 
 export default function Task({task}) {
 
@@ -11,6 +12,7 @@ export default function Task({task}) {
     <div className={styles.content}>
         <p>{task.name}</p>
         <p>{hours} : {minutes} : {seconds} </p>
+        <ButtonTaskMenu />
     </div>
   )
 }
