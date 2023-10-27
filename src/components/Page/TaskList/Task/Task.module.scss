@@ -2,9 +2,16 @@
 
 .content {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1em;
+    position: relative;
     padding: 0.5em 1em;
     border-radius: $border-radius;
     background-color: orangered;
+
+    &__taskName {
+        flex-grow: 1;
+    }
     
 }

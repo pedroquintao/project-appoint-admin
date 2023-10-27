@@ -1,17 +1,19 @@
 import React, { useState } from 'react'
 import styles from './ButtonTaskMenu.module.scss'
-import { GoKebabHorizontal } from 'react-icons/go'
+import { GoKebabHorizontal as MenuButton } from 'react-icons/go'
 import TaskMenu from './TaskMenu'
 
-export default function ButtonTaskMenu() {
+export default function ButtonTaskMenu({editModeOn, toggleEditMode}) {
 
-    const [isMenuVisible, setIsMenuVisible] = useState(false)
+  const buttonSize = 24
 
-    const toggleMenuVisibility = () => {setIsMenuVisible(!isMenuVisible);}
+  const [isMenuVisible, setIsMenuVisible] = useState(false)
+  const toggleMenuVisibility = () => {setIsMenuVisible(!isMenuVisible);}
+
   return (
     <div className={styles.content}>
-        <GoKebabHorizontal onClick={toggleMenuVisibility}/>
-        {isMenuVisible && <TaskMenu />}
+        <MenuButton onClick={toggleMenuVisibility} size={buttonSize}/>
+        {isMenuVisible && <TaskMenu toggleEditMode={toggleEditMode} editModeOn={editModeOn} />}
     </div>
   )
 }
