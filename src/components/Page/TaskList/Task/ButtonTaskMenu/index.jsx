@@ -12,7 +12,7 @@ export default function ButtonTaskMenu({editModeOn, toggleEditMode}) {
 
   return (
     <div className={styles.content}>
-        <MenuButton onClick={toggleMenuVisibility} size={buttonSize}/>
+        <MenuButton className={styles.content__menuButton} onClick={toggleMenuVisibility} size={buttonSize}/>
         {isMenuVisible && <TaskMenu toggleEditMode={toggleEditMode} editModeOn={editModeOn} />}
     </div>
   )

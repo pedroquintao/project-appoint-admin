@@ -2,7 +2,7 @@
 import styles from './ModalCreateTask.module.scss'
 import axios from 'axios';
 
-export default function ModalCreateTask({getTaskList, toggleModalVisibility}) {
+export default function ModalCreateTask({getTaskList, setIsModalOpen}) {
 
   const [formData, setFormData] = useState();
 
@@ -31,23 +31,29 @@ export default function ModalCreateTask({getTaskList, toggleModalVisibility}) {
     .then(response => console.log('Requisição enviada com sucesso!', response.data))
     .catch(error => console.log('Erro ao enviar a requisição!', error))
     .finally(() => {
-      toggleModalVisibility();
+      setIsModalOpen(false);
       getTaskList();
     })
   }
 
   return (
-    <form className={styles.content}>
-      <label>Name</label>
-      <input name='name' type='text' placeholder='Working Time' onChange={changeName}/>
+    <>
+      <div className={styles.container} 
+           onClick={(e) => {
+                            if(e.target.className === styles.container){()=> setIsModalOpen(false)}
+                              }}></div>
+      <form className={styles.content}>
+        <label>Name</label>
+        <input name='name' type='text' placeholder='Hours to finish work' onChange={changeName}/>
 
-      <label>Planned Time</label>
-      <input name='plannedTime' type='time' step='1' onChange={changePlannedTime}/>
+        <label>Planned Time</label>
+        <input name='plannedTime' type='time' step='1' onChange={changePlannedTime}/>
 
-      <div className={styles.content__buttons}>
-        <button onClick={toggleModalVisibility}>Cancel</button>
-        <button type='submit' onClick={createNewTask}>Create</button>
-      </div>
-    </form>
+        <div className={styles.content__buttons}>
+          <button onClick={() => setIsModalOpen(false)}>Cancel</button>
+          <button type='submit' onClick={createNewTask}>Create</button>
+        </div>
+      </form>
+    </>
   )
 }

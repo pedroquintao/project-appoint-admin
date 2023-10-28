@@ -8,8 +8,8 @@
 //*         2.1 - Quando esse botao e clicado, abre-se um modal com as opcoes de editar e apagar a task (talvez colocar a opcao de ler o log tambem)
 //*         2.2 - Ao clicar na opcao de editar, os textos de nome e planned time da task selecionada se tornam iputs text e time respectivamente. Ao mesmo tempo, os botoes do modal tornam-se um sinal de tick e um X.
 //*             2.2.1 - Estilizar os inputs
-//todo          2.2.2 - Se o botao de tick e clicado, surgira um modal com um texto perguntando se confirma que voce realmente quer editar a task, um botao de cancela e um de confirma
-//todo              2.2.2.1 - Se o botao de cancelar e clicado, o modal fecha.
+//*          2.2.2 - Se o botao de tick e clicado, surgira um modal com um texto perguntando se confirma que voce realmente quer editar a task, um botao de cancela e um de confirma
+//*              2.2.2.1 - Se o botao de cancelar e clicado, o modal fecha.
 //todo              2.2.2.2 - Se o botao de confirma e clicado, será enviada uma requisicao do tipo path com os valores presentes nos inputs da task, com a sua id e em sequencia o modal de confirmacao e o modal das opcoes sao fechados. Alem disso, o nome da task e  planned time deixam de ser inputs e voltam a ser textos
-//todo          2.2.3 - Se o botao de X e clicado, o modal volta a ter as opcoes de editar/deletar e o nome e planned time da task deixam de ser inputs e voltam a ser textos
-//todo      2.3 - Fazer com que o menu feche ao clicar fora dele
+//*          2.2.3 - Se o botao de X e clicado, o modal é fechado
+//*      2.3 - Fazer com que o menu feche ao clicar fora dele

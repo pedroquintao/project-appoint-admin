@@ -5,11 +5,15 @@ import { RiEditLine as EditButton,
          RiFileHistoryLine as LogButton,
          RiCheckFill as AcceptButton,
          RiCloseFill as DeclineButton } from 'react-icons/ri';
+import ModalConfirmation from './ModalConfirmation';
+import { createPortal } from 'react-dom';
 
 export default function TaskMenu({toggleEditMode, editModeOn}) {
 
   const buttonSize = 24;
   
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     
     <div className={styles.content}>
@@ -30,7 +34,7 @@ export default function TaskMenu({toggleEditMode, editModeOn}) {
         </>
       ) : (
         <div className={styles.content__confirmationDiv}>
-          <div>
+          <div onClick={() => {setIsModalOpen(true)}}>
             <AcceptButton size={buttonSize}/>
           </div>
           <div onClick={toggleEditMode}>
@@ -38,6 +42,11 @@ export default function TaskMenu({toggleEditMode, editModeOn}) {
           </div>
         </div>
       )}
+      {isModalOpen && 
+      // É comum utilizar o createPortal em modais para coloca-los como silibin do body
+        createPortal(
+          <ModalConfirmation setIsModalOpen={setIsModalOpen}/>, document.body)
+      }
     </div>
   )
 }

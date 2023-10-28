@@ -8,6 +8,11 @@
     align-items: center;
     padding: 8px;
     border-radius: $border-radius;
-    background-color: blue;
+    cursor: pointer;
+    background-color: darkblue;
     position: relative;
+
+    &:hover {
+        background-color: blue;
+    }
 }

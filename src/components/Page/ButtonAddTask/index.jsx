@@ -5,14 +5,14 @@ import { AiOutlinePlus } from 'react-icons/ai'
 
 export default function ButtonAddTask({getTaskList}) {
   
-  const [isModalVisible, setIsModalVisible] = useState(false)
+  const [isModalOpen, setIsModalOpen] = useState(false)
 
-  const toggleModalVisibility = () => {setIsModalVisible(!isModalVisible);}
+  // const toggleModalVisibility = () => {setIsModalOpen(!isModalOpen);}
 
   return (
-    <div className={styles.content}>
-        <AiOutlinePlus size={24} onClick={toggleModalVisibility}/>
-        {isModalVisible && <ModalCreateTask getTaskList={getTaskList} toggleModalVisibility={toggleModalVisibility} />}
+    <div className={styles.content} onClick={() => setIsModalOpen(true)} >
+        <AiOutlinePlus size={24} />
+        {isModalOpen && <ModalCreateTask getTaskList={getTaskList} toggleModalVisibility={setIsModalOpen} />}
     </div>
   )
 }
