@@ -13,3 +13,5 @@
 //todo              2.2.2.2 - Se o botao de confirma e clicado, será enviada uma requisicao do tipo path com os valores presentes nos inputs da task, com a sua id e em sequencia o modal de confirmacao e o modal das opcoes sao fechados. Alem disso, o nome da task e  planned time deixam de ser inputs e voltam a ser textos
 //*          2.2.3 - Se o botao de X e clicado, o modal é fechado
 //*      2.3 - Fazer com que o menu feche ao clicar fora dele
+
+//? breakpoint: Estava trabalhando na funcao de fazer com que o modal de criar nova task feche ao clicar fora dele. Tentei passar a funcao setIsModalOpen para o componente filho do TaskMenu, mas quando chamo ela no componente filho o console acusa que ela nao é uma função. Para ir diretamente para o ponto em que estava trabalhando, é só pesquisar por 'breakpoint'.
