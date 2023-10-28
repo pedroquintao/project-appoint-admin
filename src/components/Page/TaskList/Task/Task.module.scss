@@ -1,3 +1,4 @@
+@import '../../../../styles/colors';
 @import '../../../../styles/misc';
 
 .content {
@@ -10,8 +11,20 @@
     border-radius: $border-radius;
     background-color: orangered;
 
+    &__inputName,
     &__taskName {
         flex-grow: 1;
     }
     
+    &__inputName,
+    &__inputPlannedTime {
+        border-style: none;
+        border-radius: $border-radius;
+        padding: 0.25em 0.5em;
+        background-color: $white3;
+
+        &:hover {
+            background-color: $black3;
+        }
+    }
 }

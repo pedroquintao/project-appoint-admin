@@ -4,13 +4,39 @@ import ButtonTaskMenu from './ButtonTaskMenu'
 import { useState } from 'react'
 
 export default function Task({task}) {
+  
+  const normalizeTime = (time) => {
+    const hours = time.hours < 10? `0${time.hours}` : `${time.hours}`
+    const minutes = time.minutes < 10? `0${time.minutes}` : `${time.minutes}`
+    const seconds = time.seconds < 10? `0${time.seconds}` : `${time.seconds}`
 
-  const hours = task.plannedTime.hours < 10? `0${task.plannedTime.hours}` : `${task.plannedTime.hours}`
-  const minutes = task.plannedTime.minutes < 10? `0${task.plannedTime.minutes}` : `${task.plannedTime.minutes}`
-  const seconds = task.plannedTime.seconds < 10? `0${task.plannedTime.seconds}` : `${task.plannedTime.seconds}`
+    return [hours, minutes, seconds]
+  }
+
+  const [hours, minutes, seconds] = normalizeTime(task.plannedTime)
   
   const [editModeOn, setEditModeOn] = useState(false)
   const toggleEditMode = () => {setEditModeOn(!editModeOn)}
+
+  const [formData, setFormData] = useState(task)
+
+  const changeName = (e) => {
+    const {name, value} = e.target;
+    setFormData({...formData, [name]: value})
+  }
+
+  const changePlannedTime = (e) => {
+    const {name, value} = e.target;
+
+    const [hours, minutes, seconds] = value.split(':')
+
+    setFormData({...formData, [name]: {
+                                       hours: hours, 
+                                       minutes: minutes, 
+                                       seconds: seconds
+                                      }
+                                    })
+                                  }
 
   return (
     <div className={styles.content}>
@@ -21,12 +47,11 @@ export default function Task({task}) {
         </>
       ) : (
         <>
-          <input type='text' className={styles.content__taskName} />
-          <input type='time' step={1} className={styles.content__taskPlannedTime} />
+          <input className={styles.content__inputName} type='text' name='name' onChange={changeName}/>
+          <input className={styles.content__inputPlannedTime} type='time' name='plannedTime' step={1} onChange={changePlannedTime} />
         </>
       )}
-        
-        <ButtonTaskMenu editModeOn={editModeOn} toggleEditMode={toggleEditMode}/>
+        <ButtonTaskMenu editModeOn={editModeOn} toggleEditMode={toggleEditMode} formData={formData}/>
     </div>
   )
 }
