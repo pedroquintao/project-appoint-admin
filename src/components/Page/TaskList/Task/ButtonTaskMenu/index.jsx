@@ -3,7 +3,7 @@ import styles from './ButtonTaskMenu.module.scss'
 import { GoKebabHorizontal as MenuButton } from 'react-icons/go'
 import TaskMenu from './TaskMenu'
 
-export default function ButtonTaskMenu({editModeOn, toggleEditMode}) {
+export default function ButtonTaskMenu({editModeOn, toggleEditMode, formData, getTaskList}) {
 
   const buttonSize = 24
 
@@ -13,7 +13,7 @@ export default function ButtonTaskMenu({editModeOn, toggleEditMode}) {
   return (
     <div className={styles.content}>
         <MenuButton className={styles.content__menuButton} onClick={toggleMenuVisibility} size={buttonSize}/>
-        {isMenuVisible && <TaskMenu toggleEditMode={toggleEditMode} editModeOn={editModeOn} />}
+        {isMenuVisible && <TaskMenu toggleEditMode={toggleEditMode} editModeOn={editModeOn} formData={formData} toggleMenuVisibility={toggleMenuVisibility} getTaskList={getTaskList}/>}
     </div>
   )
 }

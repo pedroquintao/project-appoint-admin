@@ -40,7 +40,8 @@ export default function ModalCreateTask({getTaskList, setIsModalOpen}) {
     <>
       <div className={styles.container} 
            onClick={(e) => {
-                            if(e.target.className === styles.container){()=> setIsModalOpen(false)}
+            //breakpoint
+                            if(e.target.className === styles.container){() => setIsModalOpen(false)}
                               }}></div>
       <form className={styles.content}>
         <label>Name</label>

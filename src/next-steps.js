@@ -15,3 +15,15 @@
 //*      2.3 - Fazer com que o menu feche ao clicar fora dele
 
 //? breakpoint: Estava trabalhando na funcao de fazer com que o modal de criar nova task feche ao clicar fora dele. Tentei passar a funcao setIsModalOpen para o componente filho do TaskMenu, mas quando chamo ela no componente filho o console acusa que ela nao é uma função. Para ir diretamente para o ponto em que estava trabalhando, é só pesquisar por 'breakpoint'.
+
+//! Fazer com que o menu de confirmacao de edit (o menu, nao o modal) nao apareca quando for fechado de uma forma que não seja clicando no botão X.
+
+//? Trocar os toggle pelo set dos states?
+
+//? Existem casos, como a função getTask localizada no app.jsx, que é necessário passa-la até os componentes mais filhos. Nesse caso inclusive, a função task foi passada do app, como props, até um elemento filho de 5o grau. Será que nesse tipo de caso, não seria melhor destacar essa função em um arquivo a parte e exportá-la nos demais componentes, quando necessário? OBS.: Esse problema é chamado de PropDrilling que é: 
+
+    //? O prop drilling é um problema comum em React em que as props (propriedades) precisam ser passadas repetidamente de componentes pais para componentes filhos em uma hierarquia de componentes, mesmo quando essas props são necessárias em níveis mais profundos da árvore de componentes. Isso pode levar a um código complexo e difícil de manter, uma vez que torna a passagem de dados entre componentes mais trabalhosa. Para resolver esse problema, o React oferece soluções como o Context API, Redux ou Hooks customizados, que permitem compartilhar dados e funções de forma mais eficiente em toda a aplicação, reduzindo a necessidade de prop drilling.
+
+    //? Na Alura tem um curso voltado para trabalhar com esse problema, utilizando o ContextAPI, chamado React: Gerenciamento de estados globais com o ContextAPI
+
+//todo  3 - Criar funções genericas para ações como abrir e fechar modal, menu, etc. Tem muitas dessas funções que estão se tornando repetitivas pelo código

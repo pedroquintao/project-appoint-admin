@@ -3,7 +3,7 @@ import styles from './Task.module.scss'
 import ButtonTaskMenu from './ButtonTaskMenu'
 import { useState } from 'react'
 
-export default function Task({task}) {
+export default function Task({task, getTaskList}) {
   
   const normalizeTime = (time) => {
     const hours = time.hours < 10? `0${time.hours}` : `${time.hours}`
@@ -51,7 +51,7 @@ export default function Task({task}) {
           <input className={styles.content__inputPlannedTime} type='time' name='plannedTime' step={1} onChange={changePlannedTime} />
         </>
       )}
-        <ButtonTaskMenu editModeOn={editModeOn} toggleEditMode={toggleEditMode} formData={formData}/>
+        <ButtonTaskMenu editModeOn={editModeOn} toggleEditMode={toggleEditMode} formData={formData} getTaskList={getTaskList}/>
     </div>
   )
 }

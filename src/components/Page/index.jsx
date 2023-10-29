@@ -34,7 +34,7 @@ export default function Page() {
               <ButtonAddTask getTaskList={getTaskList} />
               <SearchBar />
             </div>
-            <TaskList taskList={taskList} />
+            <TaskList taskList={taskList} getTaskList={getTaskList} />
         </div>
   )
 }

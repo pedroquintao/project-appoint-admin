@@ -8,7 +8,7 @@ import { RiEditLine as EditButton,
 import ModalConfirmation from './ModalConfirmation';
 import { createPortal } from 'react-dom';
 
-export default function TaskMenu({toggleEditMode, editModeOn}) {
+export default function TaskMenu({toggleEditMode, editModeOn, formData, toggleMenuVisibility, getTaskList}) {
 
   const buttonSize = 24;
   
@@ -45,7 +45,12 @@ export default function TaskMenu({toggleEditMode, editModeOn}) {
       {isModalOpen && 
       // É comum utilizar o createPortal em modais para coloca-los como silibin do body
         createPortal(
-          <ModalConfirmation setIsModalOpen={setIsModalOpen}/>, document.body)
+          <ModalConfirmation setIsModalOpen={setIsModalOpen} 
+                             formData={formData}
+                             toggleEditMode={toggleEditMode}
+                             toggleMenuVisibility={toggleMenuVisibility} 
+                             getTaskList={getTaskList} />
+                             , document.body)
       }
     </div>
   )
