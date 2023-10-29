@@ -1,0 +1,49 @@
+@import '../../../../../../styles/colors';
+@import '../../../../../../styles/misc';
+
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: 1em;
+    background-color: goldenrod;
+    position: absolute;
+    top: 0;
+    left: calc(100% + 1em);
+    padding: 1em;
+    border-radius: $border_radius;
+
+    &__editButton,
+    &__deleteButton,
+    &__logButton {
+        display: flex;
+        justify-content: flex-start;
+        gap: 1em;
+        cursor: pointer;
+        border-radius: $border_radius;
+        padding: 0.25em 0.5em;
+
+        &:hover {
+            background-color: chocolate;
+        }
+    }
+
+    &__confirmationDiv {
+        display: flex;
+        justify-content: center;
+        gap: 1em;
+
+        div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0.5em;
+            border-radius: $border-radius;
+
+            &:hover {
+                background-color: chocolate;
+            }
+        }  
+    }
+}

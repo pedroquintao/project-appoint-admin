@@ -1,0 +1,19 @@
+@import '../../../../../styles/colors';
+@import '../../../../../styles/misc';
+
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: darkslategrey;
+    border-radius: $border_radius;
+    padding: 0.25em 0.5em;
+
+    &:hover {
+        background-color: coral;
+    }
+
+    &__menuButton {
+        cursor: pointer;
+    }
+}
