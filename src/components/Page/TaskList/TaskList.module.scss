@@ -1,0 +1,10 @@
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    background-color: purple;
+    flex-grow: 1;
+    margin-bottom: 5%;
+    width: 90%;
+    max-width: 500px;
+}

@@ -1,0 +1,23 @@
+@import '../../styles/colors';
+@import '../../styles/misc';
+
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: $black2;
+    border-radius: $border-radius;
+    height: 95vh;
+    margin: 1em;
+    gap: 1em;
+
+    &__addAndSearch {
+        display: flex;
+        justify-content: flex-start;
+        gap: 1em;
+        width: 90%;
+        max-width: 250px;
+    }
+}

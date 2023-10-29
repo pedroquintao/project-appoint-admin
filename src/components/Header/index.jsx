@@ -3,10 +3,10 @@ import styles from './Header.module.scss'
 
 export default function Header() {
   return (
-    <header className={styles.header}>
-      <div>
-        <p>Pitaya</p>
-      </div>
-    </header>
+    <div className={styles._header}>
+        <header>
+            <p>Appoint</p> 
+        </header>
+    </div>
   )
 }
