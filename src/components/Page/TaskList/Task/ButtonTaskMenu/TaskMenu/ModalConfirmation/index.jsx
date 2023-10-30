@@ -12,7 +12,7 @@ export default function ModalConfirmation({setIsModalOpen, formData, toggleEditM
     }
 
     const editTask = () => {
-        const id = formData.id
+        const id = formData.id;
         console.log("id: ", id)
         axios.patch(`http://localhost:8080/task/${id}`, formData)
         .then(response => console.log('A requisição PATH foi enviada', response.data))

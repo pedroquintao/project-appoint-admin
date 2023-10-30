@@ -40,10 +40,14 @@ export default function ModalCreateTask({getTaskList, setIsModalOpen}) {
     <>
       <div className={styles.container} 
            onClick={(e) => {
-            //breakpoint
-                            if(e.target.className === styles.container){() => setIsModalOpen(false)}
-                              }}></div>
-      <form className={styles.content}>
+                            if(e.target.className === styles.container){
+                              setIsModalOpen(false)
+                              console.log('CLicou Fora!')
+                            }
+                              }}
+          > 
+      </div>
+      <div className={styles.content}>
         <label>Name</label>
         <input name='name' type='text' placeholder='Hours to finish work' onChange={changeName}/>
 
@@ -51,10 +55,10 @@ export default function ModalCreateTask({getTaskList, setIsModalOpen}) {
         <input name='plannedTime' type='time' step='1' onChange={changePlannedTime}/>
 
         <div className={styles.content__buttons}>
-          <button onClick={() => setIsModalOpen(false)}>Cancel</button>
+          <button className={styles.content__buttons__cancel} onClick={() => setIsModalOpen(false)}>Cancel</button>
           <button type='submit' onClick={createNewTask}>Create</button>
         </div>
-      </form>
+      </div>
     </>
   )
 }
