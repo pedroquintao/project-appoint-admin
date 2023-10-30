@@ -8,22 +8,37 @@ import { RiEditLine as EditButton,
 import ModalConfirmation from './ModalConfirmation';
 import { createPortal } from 'react-dom';
 
-export default function TaskMenu({toggleEditMode, editModeOn, formData, toggleMenuVisibility, getTaskList}) {
+export default function TaskMenu({toggleEditMode, toggleDeleteMode, editModeOn, deleteModeOn, formData, toggleMenuVisibility, getTaskList}) {
 
   const buttonSize = 24;
   
   const [isModalOpen, setIsModalOpen] = useState(false);
 
+  const toggleModeHandler = () => {
+    editModeOn? toggleEditMode()
+    : deleteModeOn? toggleDeleteMode()
+    : null
+  }
+  
   return (
     
     <div className={styles.content}>
-      {!editModeOn? (
+      {editModeOn || deleteModeOn ? (
+        <div className={styles.content__confirmationDiv}>
+        <div onClick={() => {setIsModalOpen(true)}}>
+          <AcceptButton size={buttonSize}/>
+        </div>
+        <div onClick={toggleModeHandler}>
+          <DeclineButton size={buttonSize}/>
+        </div>
+      </div>
+      ) : (
         <>
           <div className={styles.content__editButton} onClick={toggleEditMode}>
             <EditButton size={buttonSize}/>
             <p>Edit</p>
           </div>
-          <div className={styles.content__deleteButton}>
+          <div className={styles.content__deleteButton} onClick={toggleDeleteMode}>
             <DeleteButton size={buttonSize}/>
             <p>Delete</p>
           </div>
@@ -32,15 +47,6 @@ export default function TaskMenu({toggleEditMode, editModeOn, formData, toggleMe
             <p>Logs</p>
           </div>
         </>
-      ) : (
-        <div className={styles.content__confirmationDiv}>
-          <div onClick={() => {setIsModalOpen(true)}}>
-            <AcceptButton size={buttonSize}/>
-          </div>
-          <div onClick={toggleEditMode}>
-            <DeclineButton size={buttonSize}/>
-          </div>
-        </div>
       )}
       {isModalOpen && 
       // É comum utilizar o createPortal em modais para coloca-los como silibin do body
@@ -48,6 +54,9 @@ export default function TaskMenu({toggleEditMode, editModeOn, formData, toggleMe
           <ModalConfirmation setIsModalOpen={setIsModalOpen} 
                              formData={formData}
                              toggleEditMode={toggleEditMode}
+                             toggleDeleteMode={toggleDeleteMode}
+                             editModeOn={editModeOn}
+                             deleteModeOn={deleteModeOn}
                              toggleMenuVisibility={toggleMenuVisibility} 
                              getTaskList={getTaskList} />
                              , document.body)

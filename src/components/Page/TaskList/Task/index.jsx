@@ -18,6 +18,9 @@ export default function Task({task, getTaskList}) {
   const [editModeOn, setEditModeOn] = useState(false)
   const toggleEditMode = () => {setEditModeOn(!editModeOn)}
 
+  const [deleteModeOn, setDeleteMode] = useState(false)
+  const toggleDeleteMode = () => {setDeleteMode(!deleteModeOn)}
+
   const [formData, setFormData] = useState(task)
 
   const changeName = (e) => {
@@ -51,7 +54,11 @@ export default function Task({task, getTaskList}) {
           <input className={styles.content__inputPlannedTime} type='time' name='plannedTime' step={1} onChange={changePlannedTime} />
         </>
       )}
-        <ButtonTaskMenu editModeOn={editModeOn} toggleEditMode={toggleEditMode} formData={formData} getTaskList={getTaskList}/>
+        <ButtonTaskMenu editModeOn={editModeOn}
+                        deleteModeOn={deleteModeOn} 
+                        toggleEditMode={toggleEditMode} 
+                        toggleDeleteMode={toggleDeleteMode}
+                        formData={formData} getTaskList={getTaskList}/>
     </div>
   )
 }

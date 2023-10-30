@@ -10,7 +10,13 @@ import { useState, useEffect } from 'react'
 
 export default function Page() {
 
-  const [taskList, setTaskList] = useState([])
+  const [taskList, setTaskList] = useState([{id: 0,
+                                             name: 'Task1',
+                                             plannedTime: {
+                                              hours: 0,
+                                              minutes: 20,
+                                              seconds: 13
+                                             }}])
 
   const getTaskList = () => {
     axios.get('http://localhost:8080/task')
