@@ -9,7 +9,13 @@
     position: relative;
     padding: 0.5em 1em;
     border-radius: $border-radius;
-    background-color: orangered;
+    border: 1px solid $black3;
+    background-color: $black2;
+    color: $white3;
+
+    &:hover {
+         background-color: $black1;
+    }
 
     &__inputName,
     &__taskName {

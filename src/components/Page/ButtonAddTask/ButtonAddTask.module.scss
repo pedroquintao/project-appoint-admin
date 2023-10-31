@@ -9,13 +9,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 8px;
+    padding: 1em;
     border-radius: $border-radius;
     cursor: pointer;
-    background-color: darkblue;
-    // position: relative;
+    background-color: $white1;
+    color: $black0;
 
     &:hover {
-        background-color: blue;
+        background-color: $white3;
     }
 }

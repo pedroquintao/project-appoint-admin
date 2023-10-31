@@ -39,7 +39,7 @@ export default function ModalConfirmation({setIsModalOpen,
         .catch(error => console.log('ERROR: ', error))
         .finally(() => {
             setIsModalOpen(false);
-            toggleDeleteMode()
+            toggleDeleteMode();
             toggleMenuVisibility();
             getTaskList();
         })

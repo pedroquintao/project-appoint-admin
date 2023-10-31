@@ -18,14 +18,14 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    background-color: $white3;
+    background-color: $white1;
     padding: 1em;
     border-radius: $border-radius;
     width: 50%;
     gap: 5em;
 
     &__header {
-        background-color: $white3;
+        background-color: $white1;
         display: flex;
         justify-content: flex-end;
         border-style: none;
@@ -46,7 +46,7 @@
     &__footer {
         display: flex;
         justify-content: space-around;
-        background-color: $white3;
+        background-color: $white1;
         width: 100%;
         margin-bottom: 1em;
 

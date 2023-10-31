@@ -29,3 +29,5 @@
 //todo  3 - Criar funções genericas para ações como abrir e fechar modal, menu, etc. Tem muitas dessas funções que estão se tornando repetitivas pelo código
 
 //todo 4 - Desenvolver a acao de deletar task.
+
+//todo 5 - Quando coloca-se o mouse em cima do menu da task, o hover do botao do menu (o kebab) também altera a cor, isso se dá pela disposicao das divs e seus parentescos. O hover deve ser feito de forma a ativar somente na div em que o mouse está em cima.

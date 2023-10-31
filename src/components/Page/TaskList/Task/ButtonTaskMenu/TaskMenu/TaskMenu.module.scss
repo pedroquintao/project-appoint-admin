@@ -7,7 +7,8 @@
     flex-direction: column;
     justify-content: space-evenly;
     gap: 1em;
-    background-color: goldenrod;
+    background-color: $black2;
+    border: 1px solid $black3;
     position: absolute;
     top: 0;
     left: calc(100% + 1em);
@@ -25,7 +26,7 @@
         padding: 0.25em 0.5em;
 
         &:hover {
-            background-color: chocolate;
+            background-color: $black3;
         }
     }
 
@@ -42,7 +43,7 @@
             border-radius: $border-radius;
 
             &:hover {
-                background-color: chocolate;
+                background-color: $black3;
             }
         }  
     }

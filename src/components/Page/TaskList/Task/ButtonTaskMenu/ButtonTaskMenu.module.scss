@@ -5,12 +5,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: darkslategrey;
+    background-color: $black2;
     border-radius: $border_radius;
     padding: 0.25em 0.5em;
 
     &:hover {
-        background-color: coral;
+        background-color: $black3;
     }
 
     &__menuButton {

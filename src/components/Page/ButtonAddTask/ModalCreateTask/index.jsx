@@ -56,7 +56,7 @@ export default function ModalCreateTask({getTaskList, setIsModalOpen}) {
 
         <div className={styles.content__buttons}>
           <button className={styles.content__buttons__cancel} onClick={() => setIsModalOpen(false)}>Cancel</button>
-          <button type='submit' onClick={createNewTask}>Create</button>
+          <button className={styles.content__buttons__create}type='submit' onClick={createNewTask}>Create</button>
         </div>
       </div>
     </>
