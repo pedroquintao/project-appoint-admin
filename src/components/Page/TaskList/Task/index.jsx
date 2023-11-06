@@ -42,7 +42,8 @@ export default function Task({task, getTaskList}) {
                                   }
 
   return (
-    <div className={styles.content}>
+
+  <li className={styles.content} onClick={() => console.log(styles.content)}>
       {!editModeOn? (
         <>
           <p className={styles.content__taskName} >{task.name}</p>
@@ -50,15 +51,24 @@ export default function Task({task, getTaskList}) {
         </>
       ) : (
         <>
-          <input className={styles.content__inputName} type='text' name='name' onChange={changeName}/>
-          <input className={styles.content__inputPlannedTime} type='time' name='plannedTime' step={1} onChange={changePlannedTime} />
+          <input className={styles.content__inputName} type='text' 
+                                                       name='name' 
+                                                       value={formData.name}
+                                                       onChange={changeName}/>
+
+          <input className={styles.content__inputPlannedTime} type='time' 
+                                                              name='plannedTime'
+                                                              value={`${hours}:${minutes}:${seconds}`}
+                                                              step={1} 
+                                                              onChange={changePlannedTime} />
         </>
       )}
         <ButtonTaskMenu editModeOn={editModeOn}
                         deleteModeOn={deleteModeOn} 
                         toggleEditMode={toggleEditMode} 
                         toggleDeleteMode={toggleDeleteMode}
-                        formData={formData} getTaskList={getTaskList}/>
-    </div>
+                        formData={formData} getTaskList={getTaskList}
+                        taskClassName={styles.content}/>
+  </li>
   )
 }

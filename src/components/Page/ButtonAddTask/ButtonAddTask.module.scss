@@ -12,10 +12,10 @@
     padding: 1em;
     border-radius: $border-radius;
     cursor: pointer;
-    background-color: $white1;
-    color: $black0;
+    background-color: $black0;
+    color: $white3;
 
     &:hover {
-        background-color: $white3;
+        background-color: $black3;
     }
 }

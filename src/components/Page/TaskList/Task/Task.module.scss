@@ -12,6 +12,7 @@
     border: 1px solid $black3;
     background-color: $black2;
     color: $white3;
+    z-index: 3;
 
     &:hover {
          background-color: $black1;
@@ -19,6 +20,7 @@
 
     &__inputName,
     &__taskName {
+        font-size: 1rem;
         flex-grow: 1;
     }
     
@@ -26,8 +28,10 @@
     &__inputPlannedTime {
         border-style: none;
         border-radius: $border-radius;
-        padding: 0.25em 0.5em;
-        background-color: $white3;
+        border: 1px solid $black3;
+        padding: 0.5em 1em;
+        background-color: $black4;
+        color: $white3;
 
         &:hover {
             background-color: $black3;

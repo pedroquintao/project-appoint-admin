@@ -42,10 +42,9 @@ export default function ModalCreateTask({getTaskList, setIsModalOpen}) {
            onClick={(e) => {
                             if(e.target.className === styles.container){
                               setIsModalOpen(false)
-                              console.log('CLicou Fora!')
+                              console.log('Clicou Fora!')
                             }
-                              }}
-          > 
+                              }}> 
       </div>
       <div className={styles.content}>
         <label>Name</label>

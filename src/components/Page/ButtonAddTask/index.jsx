@@ -14,7 +14,10 @@ export default function ButtonAddTask({getTaskList}) {
       <div className={styles.content} onClick={() => {setIsModalOpen(true)}} >
           <AiOutlinePlus size={32} />
       </div>
-          {isModalOpen && <ModalCreateTask getTaskList={getTaskList} setIsModalOpen={setIsModalOpen} isModalOpen={isModalOpen}/>}
+          {isModalOpen && <ModalCreateTask getTaskList={getTaskList} 
+                                           setIsModalOpen={setIsModalOpen} 
+                                           isModalOpen={isModalOpen}/>
+                                           }
     </div>
   )
 }

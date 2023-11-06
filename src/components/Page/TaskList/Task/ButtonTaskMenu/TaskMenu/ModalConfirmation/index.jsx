@@ -23,7 +23,7 @@ export default function ModalConfirmation({setIsModalOpen,
     const editTask = () => {
         console.log("id: ", id)
         axios.patch(`${requestTarget}${id}`, formData)
-        .then(response => console.log('A requisição PATH foi enviada', response.data))
+        .then(response => console.log('A requisição PATCH foi enviada', response.data))
         .catch(error => console.log('ERROR: ', error))
         .finally(() => {
             setIsModalOpen(false);

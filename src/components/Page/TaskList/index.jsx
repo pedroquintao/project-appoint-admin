@@ -6,8 +6,10 @@ import Task from './Task'
 export default function TaskList({taskList, getTaskList}) {
 
   return (
-    <div className={styles.content}>
-      {taskList.map((task) => <Task key={task.id} task={task} getTaskList={getTaskList}/>)}
-    </div>
+    <>
+      <ul className={styles.content}>
+        {taskList.map((task) => <Task key={task.id} task={task} getTaskList={getTaskList}/>)}
+      </ul>
+    </>
   )
 }

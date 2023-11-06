@@ -8,7 +8,14 @@ import { RiEditLine as EditButton,
 import ModalConfirmation from './ModalConfirmation';
 import { createPortal } from 'react-dom';
 
-export default function TaskMenu({toggleEditMode, toggleDeleteMode, editModeOn, deleteModeOn, formData, toggleMenuVisibility, getTaskList}) {
+export default function TaskMenu({toggleEditMode, 
+                                  toggleDeleteMode, 
+                                  editModeOn, 
+                                  deleteModeOn, 
+                                  formData, 
+                                  toggleMenuVisibility, 
+                                  getTaskList,
+                                  taskClassName}) {
 
   const buttonSize = 24;
   
@@ -21,46 +28,57 @@ export default function TaskMenu({toggleEditMode, toggleDeleteMode, editModeOn, 
   }
   
   return (
-    
-    <div className={styles.content}>
-      {editModeOn || deleteModeOn ? (
-        <div className={styles.content__confirmationDiv}>
-        <div onClick={() => {setIsModalOpen(true)}}>
-          <AcceptButton size={buttonSize}/>
-        </div>
-        <div onClick={toggleModeHandler}>
-          <DeclineButton size={buttonSize}/>
-        </div>
+    <>
+      <div className={styles.container} 
+           onClick={(e) => { if(e.target.className === styles.container || e.target.className === taskClassName) {
+                                console.log(taskClassName)
+                                toggleMenuVisibility();
+                              }
+                            }
+                          }>
       </div>
-      ) : (
-        <>
-          <div className={styles.content__editButton} onClick={toggleEditMode}>
-            <EditButton size={buttonSize}/>
-            <p>Edit</p>
+
+      <div className={styles.content}>
+        {editModeOn || deleteModeOn ? (
+          <div className={styles.content__confirmationDiv}>
+          <div onClick={() => {setIsModalOpen(true)}}>
+            <AcceptButton size={buttonSize}/>
           </div>
-          <div className={styles.content__deleteButton} onClick={toggleDeleteMode}>
-            <DeleteButton size={buttonSize}/>
-            <p>Delete</p>
+          <div onClick={toggleModeHandler}>
+            <DeclineButton size={buttonSize}/>
           </div>
-          <div className={styles.content__logButton}>
-            <LogButton size={buttonSize}/>
-            <p>Logs</p>
-          </div>
-        </>
-      )}
-      {isModalOpen && 
-      // É comum utilizar o createPortal em modais para coloca-los como silibin do body
-        createPortal(
-          <ModalConfirmation setIsModalOpen={setIsModalOpen} 
-                             formData={formData}
-                             toggleEditMode={toggleEditMode}
-                             toggleDeleteMode={toggleDeleteMode}
-                             editModeOn={editModeOn}
-                             deleteModeOn={deleteModeOn}
-                             toggleMenuVisibility={toggleMenuVisibility} 
-                             getTaskList={getTaskList} />
-                             , document.body)
-      }
-    </div>
+        </div>
+        ) : (
+          <>
+            <div className={styles.content__editButton} onClick={toggleEditMode}>
+              <EditButton size={buttonSize}/>
+              <p>Edit</p>
+            </div>
+            <div className={styles.content__deleteButton} onClick={toggleDeleteMode}>
+              <DeleteButton size={buttonSize}/>
+              <p>Delete</p>
+            </div>
+            <div className={styles.content__logButton}>
+              <LogButton size={buttonSize}/>
+              <p>Logs</p>
+            </div>
+          </>
+        )}
+
+        {isModalOpen && 
+        // É comum utilizar o createPortal em modais para coloca-los como silibin do body
+          createPortal(
+            <ModalConfirmation setIsModalOpen={setIsModalOpen} 
+                              formData={formData}
+                              toggleEditMode={toggleEditMode}
+                              toggleDeleteMode={toggleDeleteMode}
+                              editModeOn={editModeOn}
+                              deleteModeOn={deleteModeOn}
+                              toggleMenuVisibility={toggleMenuVisibility} 
+                              getTaskList={getTaskList} />
+                              , document.body)
+        }
+      </div>
+    </>
   )
 }
