@@ -10,7 +10,7 @@
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 3;
+    z-index: 9;
 }
 
 .content {
@@ -27,7 +27,7 @@
     padding: 1em 2em;
     top: calc(100% + 10px);
     left: 0;
-    z-index: 3;
+    z-index: 10;
 
     input {
         padding: 0.5em 1em;

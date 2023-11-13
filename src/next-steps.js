@@ -18,6 +18,8 @@
 
 //! Fazer com que o menu de confirmacao de edit (o menu, nao o modal) nao apareca quando for fechado de uma forma que não seja clicando no botão X.
 
+//! Verificar porque todas as li de cada task da lista estão sendo geradas com o mesmo nome de classe.
+
 //? Trocar os toggle pelo set dos states?
 
 //? Existem casos, como a função getTask localizada no app.jsx, que é necessário passa-la até os componentes mais filhos. Nesse caso inclusive, a função task foi passada do app, como props, até um elemento filho de 5o grau. Será que nesse tipo de caso, não seria melhor destacar essa função em um arquivo a parte e exportá-la nos demais componentes, quando necessário? OBS.: Esse problema é chamado de PropDrilling que é: 

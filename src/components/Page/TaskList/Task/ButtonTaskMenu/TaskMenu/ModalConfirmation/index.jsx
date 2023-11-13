@@ -13,7 +13,7 @@ export default function ModalConfirmation({setIsModalOpen,
     const id = formData.id;
     const requestTarget = 'http://localhost:8080/task/'
 
-    const isOutsideClick = (e) => {
+    const onOutsideClick = (e) => {
         if(e.target.className === styles.container){
             setIsModalOpen(false);
             console.log(styles.container)
@@ -51,7 +51,7 @@ export default function ModalConfirmation({setIsModalOpen,
         : null
     }
     return (
-        <div className={styles.container} onClick={isOutsideClick}>
+        <div className={styles.container} onClick={onOutsideClick}>
             <div className={styles.modal}>
                 <header className={styles.modal__header}>
                     <p className={styles.modal__header__close} onClick={() => setIsModalOpen(false)} >&times;</p>

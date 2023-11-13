@@ -43,7 +43,7 @@ export default function Task({task, getTaskList}) {
 
   return (
 
-  <li className={styles.content} onClick={() => console.log(styles.content)}>
+  <li className={styles.content} onClick={(e) => console.log(e.target.className, styles.content)}>
       {!editModeOn? (
         <>
           <p className={styles.content__taskName} >{task.name}</p>

@@ -30,7 +30,7 @@ export default function TaskMenu({toggleEditMode,
   return (
     <>
       <div className={styles.container} 
-           onClick={(e) => { if(e.target.className === styles.container || e.target.className === taskClassName) {
+           onClick={(e) => { if(e.target.className === styles.container || e.target.className !== taskClassName) {
                                 console.log(taskClassName)
                                 toggleMenuVisibility();
                               }
@@ -41,13 +41,13 @@ export default function TaskMenu({toggleEditMode,
       <div className={styles.content}>
         {editModeOn || deleteModeOn ? (
           <div className={styles.content__confirmationDiv}>
-          <div onClick={() => {setIsModalOpen(true)}}>
-            <AcceptButton size={buttonSize}/>
+            <div onClick={() => {setIsModalOpen(true)}}>
+              <AcceptButton size={buttonSize}/>
+            </div>
+            <div onClick={toggleModeHandler}>
+              <DeclineButton size={buttonSize}/>
+            </div>
           </div>
-          <div onClick={toggleModeHandler}>
-            <DeclineButton size={buttonSize}/>
-          </div>
-        </div>
         ) : (
           <>
             <div className={styles.content__editButton} onClick={toggleEditMode}>
