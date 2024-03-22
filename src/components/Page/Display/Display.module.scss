@@ -5,7 +5,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: red;
+    background-color: $black4;
+    color: $white3;
+    border-radius: 8px;
     margin-top: 5%;
     padding: 1em 2em;
     font-size: 2em;

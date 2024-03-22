@@ -1,4 +1,20 @@
+@import '../../../styles/colors';
+@import '../../../styles/misc';
+
 .content {
+    display: flex;
+    justify-content: start;
+    color: $gray1;
+    align-items: center;
     flex-grow: 1;
-    background-color: yellow;
+    background-color: $black3;
+    border: 1px solid $black4;
+    border-radius: 8px;
+    height: 25px;
+    padding: 1em 2em;
+
+        &:hover {
+            color: $gray0;
+            background-color: $black4;
+        }
 }

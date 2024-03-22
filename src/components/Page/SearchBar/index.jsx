@@ -3,8 +3,9 @@ import styles from './SearchBar.module.scss'
 
 export default function SearchBar() {
   return (
-    <div className={styles.content}>
-        SearchBar
-    </div>
+  <>
+    <input className={styles.content} placeholder='SearchBar'/>
+
+  </>
   )
 }
